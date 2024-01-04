@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1315216E2B45073700668CA0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1315216D2B45073700668CA0 /* main.swift */; };
+		135D1ECC2B46F6B8006DA069 /* 1.TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135D1ECB2B46F6B8006DA069 /* 1.TwoSum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,11 +26,7 @@
 /* Begin PBXFileReference section */
 		1315216A2B45073700668CA0 /* minu */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = minu; sourceTree = BUILT_PRODUCTS_DIR; };
 		1315216D2B45073700668CA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		135D1EC02B46EE6B006DA069 /* 1472_DesignBrowserHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = 1472_DesignBrowserHistory.swift; path = "../../../../../무제 폴더/1472_DesignBrowserHistory.swift"; sourceTree = "<group>"; };
-		135D1EC12B46EE6B006DA069 /* 42.TrappingRainWater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = 42.TrappingRainWater.swift; path = "../../../../../무제 폴더/42.TrappingRainWater.swift"; sourceTree = "<group>"; };
-		135D1EC22B46EE6B006DA069 /* 1.TwoSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = 1.TwoSum.swift; path = "../../../../../무제 폴더/1.TwoSum.swift"; sourceTree = "<group>"; };
-		135D1EC32B46EE6B006DA069 /* 121.Best_Time_to_Buy_and_Sell Stock .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "121.Best_Time_to_Buy_and_Sell Stock .swift"; path = "../../../../../무제 폴더/121.Best_Time_to_Buy_and_Sell Stock .swift"; sourceTree = "<group>"; };
-		135D1EC42B46EE6B006DA069 /* 24.SwapNodesinPairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = 24.SwapNodesinPairs.swift; path = "../../../../../무제 폴더/24.SwapNodesinPairs.swift"; sourceTree = "<group>"; };
+		135D1ECB2B46F6B8006DA069 /* 1.TwoSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1.TwoSum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,11 +68,7 @@
 		135D1EBF2B46EE53006DA069 /* week1 */ = {
 			isa = PBXGroup;
 			children = (
-				135D1EC22B46EE6B006DA069 /* 1.TwoSum.swift */,
-				135D1EC42B46EE6B006DA069 /* 24.SwapNodesinPairs.swift */,
-				135D1EC12B46EE6B006DA069 /* 42.TrappingRainWater.swift */,
-				135D1EC32B46EE6B006DA069 /* 121.Best_Time_to_Buy_and_Sell Stock .swift */,
-				135D1EC02B46EE6B006DA069 /* 1472_DesignBrowserHistory.swift */,
+				135D1ECB2B46F6B8006DA069 /* 1.TwoSum.swift */,
 			);
 			path = week1;
 			sourceTree = "<group>";
@@ -139,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1315216E2B45073700668CA0 /* main.swift in Sources */,
+				135D1ECC2B46F6B8006DA069 /* 1.TwoSum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
