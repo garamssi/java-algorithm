@@ -1,7 +1,7 @@
-public class Main {
+class Solution {
     // brute force
     // 시간복잡도: O(n^2)
-    public int[] solution1(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -15,7 +15,7 @@ public class Main {
     // hashMap
     // 시간복잡도: O(n)
     // trade-off: hashMap이라는 자료구조를 사용하여 시간 복잡도는 줄였으나, Map이라는 저장공간을 추가로 사용하였다. 
-    public int[] solution2(int[] nums, int target) {
+    public int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> numsMap = new HashMap();
 
         for (int i = 0; i < nums.length; i++) {
@@ -30,9 +30,10 @@ public class Main {
         return null;
     }
 
-    // two pointer - 정렬 필수
+    // two pointer
     // 시간복잡도: O(n)
-    public boolean solution3(int[] nums, int target) {
+    // 정렬된 데이터에서만 two pointer를 쓸 수 있다.
+    public boolean twoSum3(int[] nums, int target) {
         Arrays.sort(nums);
 
         int left = 0;
