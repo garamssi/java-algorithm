@@ -31,7 +31,7 @@ import java.util.Scanner;
  * -109 <= target <= 10^9
  * Only one valid answer exists.
  */
-class TwoSum {
+class A_TwoSum {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -27,7 +27,7 @@ import java.util.Scanner;
  * 1 <= prices.length <= 10^5
  * 0 <= prices[i] <= 10^4
  */
-public class BestTimeToBuyAndSellStock {
+public class C_BestTimeToBuyAndSellStock {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
