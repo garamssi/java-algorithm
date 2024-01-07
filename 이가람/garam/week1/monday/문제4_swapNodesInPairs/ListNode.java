@@ -1,4 +1,4 @@
-package garam.week1.문제4_swapNodesInPairs;
+package garam.week1.monday.문제4_swapNodesInPairs;
 
 public class ListNode {
 	int val;
