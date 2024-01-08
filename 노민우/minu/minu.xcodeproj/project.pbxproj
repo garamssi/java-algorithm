@@ -68,9 +68,25 @@
 		135D1EBF2B46EE53006DA069 /* week1 */ = {
 			isa = PBXGroup;
 			children = (
-				135D1ECB2B46F6B8006DA069 /* 1.TwoSum.swift */,
+				135D1ECE2B4B8555006DA069 /* monday */,
+				135D1ECF2B4B8564006DA069 /* thursday */,
 			);
 			path = week1;
+			sourceTree = "<group>";
+		};
+		135D1ECE2B4B8555006DA069 /* monday */ = {
+			isa = PBXGroup;
+			children = (
+				135D1ECB2B46F6B8006DA069 /* 1.TwoSum.swift */,
+			);
+			path = monday;
+			sourceTree = "<group>";
+		};
+		135D1ECF2B4B8564006DA069 /* thursday */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = thursday;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

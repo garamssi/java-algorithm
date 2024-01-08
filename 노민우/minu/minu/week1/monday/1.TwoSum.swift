@@ -7,7 +7,45 @@
 
 import Foundation
 
-/*
+// 첫번째 풀이
+//class Solution {
+//    func twoSum(_ nums: [Int], target: Int) -> [Int] {
+//        for i in 0..<nums.count {
+//            for j in i+1..<nums.count {
+//                if nums[i] + nums[j] == target {
+//                    return [i, j]
+//                }
+//            }
+//        }
+//        return []
+//    }
+//}
+//
+//let output = Solution()
+//print(output.twoSum([2, 6, 11, 15], target: 8))
+
+
+// 2번째 풀이
+// 하는중 (진도 따라잡고 다시 해보기)
+class Solution {
+    func twoSum(_ nums: [Int], target: Int) -> [Int] {
+        
+        var numDictionary = [Int: Int]()
+        
+        //(n, x) 쌍의 시퀀스를 반환
+        // 여기서 n은 0에서 시작하는 연속 정수를 나타내고 x는 시퀀스의 요소를 나타냄
+        for (i, num) in nums.enumerated() {
+            numDictionary[num] = i
+        }
+        
+        return []
+    }
+}
+
+let output = Solution()
+print(output.twoSum([2, 6, 11, 15], target: 8))
+
+/* 마지막 풀이
  - **접근 방법: 해시 테이블 사용**
      
      이 문제를 해결하는 가장 효율적인 방법은 해시 테이블(스위프트에서는 딕셔너리)을 사용하여 보완 값과 그 인덱스를 저장하는 것입니다. 보완 값이란 **`target - x`**로 계산됩니다. 배열을 순회하면서 각 요소에 대해:
