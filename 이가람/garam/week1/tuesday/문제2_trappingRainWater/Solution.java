@@ -1,4 +1,4 @@
-package garam.week1.monday.문제2_trappingRainWater;
+package garam.week1.tuesday.문제2_trappingRainWater;
 
 public class Solution {
 	public static void main(String[] args) {

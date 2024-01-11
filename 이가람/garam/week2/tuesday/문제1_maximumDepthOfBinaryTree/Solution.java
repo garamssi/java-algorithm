@@ -1,4 +1,4 @@
-package garam.week2.thursday.문제1_maximumDepthOfBinaryTree;
+package garam.week2.tuesday.문제1_maximumDepthOfBinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package garam.week1.monday.문제1_TwoSume;
+package garam.week1.tuesday.문제1_TwoSume;
 
 import java.util.*;
 

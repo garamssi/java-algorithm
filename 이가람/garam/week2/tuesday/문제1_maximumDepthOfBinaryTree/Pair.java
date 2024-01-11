@@ -1,4 +1,4 @@
-package garam.week2.thursday.문제1_maximumDepthOfBinaryTree;
+package garam.week2.tuesday.문제1_maximumDepthOfBinaryTree;
 
 class Pair<L, R> {
 	L left;

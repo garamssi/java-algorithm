@@ -1,4 +1,4 @@
-package garam.week2.thursday.문제3_convertSortedArrayToBinarySearchTree;
+package garam.week2.tuesday.문제3_convertSortedArrayToBinarySearchTree;
 
 public class Solution {
 	public static void main(String[] args) {

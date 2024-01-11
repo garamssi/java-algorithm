@@ -1,4 +1,4 @@
-package garam.week1.monday.문제4_swapNodesInPairs;
+package garam.week1.tuesday.문제4_swapNodesInPairs;
 
 public class Solution {
 	public static void main(String[] args) {

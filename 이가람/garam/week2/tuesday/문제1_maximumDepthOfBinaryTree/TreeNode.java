@@ -1,4 +1,4 @@
-package garam.week2.thursday.문제2_longestunivaluePath;
+package garam.week2.tuesday.문제1_maximumDepthOfBinaryTree;
 
 public class TreeNode {
       private int val;

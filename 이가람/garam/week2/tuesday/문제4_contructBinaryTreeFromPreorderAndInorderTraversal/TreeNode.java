@@ -1,4 +1,4 @@
-package garam.week2.thursday.문제4_contructBinaryTreeFromPreorderAndInorderTraversal;
+package garam.week2.tuesday.문제4_contructBinaryTreeFromPreorderAndInorderTraversal;
 
 public class TreeNode {
 	int val;
