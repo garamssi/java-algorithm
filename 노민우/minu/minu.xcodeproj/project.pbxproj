@@ -27,6 +27,7 @@
 		1315216A2B45073700668CA0 /* minu */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = minu; sourceTree = BUILT_PRODUCTS_DIR; };
 		1315216D2B45073700668CA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		135D1ECB2B46F6B8006DA069 /* 1.TwoSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1.TwoSum.swift; sourceTree = "<group>"; };
+		13C420D92B51220F0089D138 /* 104_MaximumDepthofBinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 104_MaximumDepthofBinaryTree.swift; sourceTree = "<group>"; };
 		13CB5FD12B4CFB9E00767FEA /* 42.TrappingRainWater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 42.TrappingRainWater.swift; sourceTree = "<group>"; };
 		13CB5FD32B4CFB9E00767FEA /* BrowserHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserHistory.swift; sourceTree = "<group>"; };
 		13CB5FD52B4CFBAA00767FEA /* 20.ValidParentheses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 20.ValidParentheses.swift; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				135D1EBF2B46EE53006DA069 /* week1 */,
+				13C420D82B51208A0089D138 /* week2 */,
 				1315216D2B45073700668CA0 /* main.swift */,
 			);
 			path = minu;
@@ -72,45 +74,45 @@
 		135D1EBF2B46EE53006DA069 /* week1 */ = {
 			isa = PBXGroup;
 			children = (
-				135D1ECE2B4B8555006DA069 /* monday */,
-				135D1ECF2B4B8564006DA069 /* thursday */,
+				13CB5FD22B4CFB9E00767FEA /* class */,
+				135D1ECE2B4B8555006DA069 /* homework */,
 			);
 			path = week1;
 			sourceTree = "<group>";
 		};
-		135D1ECE2B4B8555006DA069 /* monday */ = {
+		135D1ECE2B4B8555006DA069 /* homework */ = {
 			isa = PBXGroup;
 			children = (
 				135D1ECB2B46F6B8006DA069 /* 1.TwoSum.swift */,
 				13CB5FD12B4CFB9E00767FEA /* 42.TrappingRainWater.swift */,
-				13CB5FD22B4CFB9E00767FEA /* basic */,
 			);
-			path = monday;
+			path = homework;
 			sourceTree = "<group>";
 		};
-		135D1ECF2B4B8564006DA069 /* thursday */ = {
+		13C420D82B51208A0089D138 /* week2 */ = {
 			isa = PBXGroup;
 			children = (
-				13CB5FD42B4CFBAA00767FEA /* basic */,
+				13C420DA2B5122710089D138 /* homwwork */,
 			);
-			path = thursday;
+			path = week2;
 			sourceTree = "<group>";
 		};
-		13CB5FD22B4CFB9E00767FEA /* basic */ = {
+		13C420DA2B5122710089D138 /* homwwork */ = {
+			isa = PBXGroup;
+			children = (
+				13C420D92B51220F0089D138 /* 104_MaximumDepthofBinaryTree.swift */,
+			);
+			path = homwwork;
+			sourceTree = "<group>";
+		};
+		13CB5FD22B4CFB9E00767FEA /* class */ = {
 			isa = PBXGroup;
 			children = (
 				13CB5FD32B4CFB9E00767FEA /* BrowserHistory.swift */,
-			);
-			path = basic;
-			sourceTree = "<group>";
-		};
-		13CB5FD42B4CFBAA00767FEA /* basic */ = {
-			isa = PBXGroup;
-			children = (
 				13CB5FD52B4CFBAA00767FEA /* 20.ValidParentheses.swift */,
 				13CB5FD62B4CFBD000767FEA /* 739.DailyTemperatures .swift */,
 			);
-			path = basic;
+			path = class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
