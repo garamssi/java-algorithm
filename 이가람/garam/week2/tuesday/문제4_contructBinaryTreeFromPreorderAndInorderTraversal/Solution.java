@@ -10,6 +10,16 @@ public class Solution {
 		return dfs(0, 0, inorder.length - 1, preorder, inorder);
 	}
 
+	/**
+	 *         1
+	 * 	  2	        3
+	 * 4    5    6
+	 * 	       7    8
+	 * 		     9
+	 *
+	 * {1, 2, 4, 5, 3, 6, 7, 9, 8}
+	 * {4, 2, 5, 1, 7, 9, 6, 8, 3}
+	 * */
 	private static TreeNode dfs(int preIndex, int inStart, int inEnd, int[] preorder, int[] inorder) {
 
 		if(preIndex > preorder.length - 1 || inStart > inEnd) {
@@ -28,7 +38,7 @@ public class Solution {
 		TreeNode node = new TreeNode(inorder[inIndex]);
 		// 전위 순회 다음 결과를 보도록 인덱스 +1
 		preIndex++;
-		// 왼쪽 자식 노드부터 진행
+		// 왼쪽 자식 노드부터 진행, inIndex -1을 하는 이유는 중간 기준에서 왼쪽으로 인덱스를 잡아야하기 때문,
 		node.left = dfs(preIndex, inStart, inIndex - 1, preorder, inorder);
 		// 나머지 값으로 오른쪽 자식 노드 진행
 		node.right = dfs(preIndex + inIndex - inStart, inIndex + 1, inEnd, preorder, inorder);

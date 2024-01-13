@@ -15,13 +15,23 @@ public class Solution {
 		System.out.println(dfs(root));
 	}
 
+	/**
+	 * 동일한 값을 지닌 가장 긴 경로를 찾아라.
+ 	 *    	 3
+ 	 * 	  4		3
+	 * 	1	1	  3
+	 * */
 	public static int dfs(TreeNode node) {
 		if(node == null) {
 			return 0;
 		}
 
+		//왼쪽 DFS 시작
 		int left = dfs(node.getLeft());
+
+		//오른쪽 DFS 시작
 		int right = dfs(node.getRight());
+
 
 		if(node.getLeft() != null && node.getLeft().getVal() == node.getVal()) {
 			left += 1;
