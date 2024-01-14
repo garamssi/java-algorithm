@@ -1,9 +1,8 @@
 import java.util.*;
 
 class Solution {
-    
-    Map<String, PriorityQueue<String>> fromToMap;
-    List<String> answer = new ArrayList<>();
+    private Map<String, PriorityQueue<String>> fromToMap;
+    private List<String> answer = new ArrayList<>();
 
     public static void main(String[] args) {
         String[][] tickets = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL", "SFO"}};
@@ -26,7 +25,7 @@ class Solution {
         return answer.toArray(new String[0]);
     }
 
-    public void stack(String first) {
+    private void stack(String first) {
         Deque<String> stack = new ArrayDeque<>();
         stack.push(first);
 
