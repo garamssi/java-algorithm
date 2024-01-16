@@ -17,7 +17,7 @@ public class C_GameMapShortestDistance {
                 {0,0,0,0,1}
         };
 
-        solution(maps);
+        System.out.println(solution(maps));
     }
 
     static int m;
@@ -34,46 +34,48 @@ public class C_GameMapShortestDistance {
         n = maps[0].length;
         visited = new boolean[m][n];
 
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
-                if(maps[i][j] == 1) {
-                    bfs(maps, i, j);
-                }
-            }
-        }
         answer = bfs(maps, 0, 0);
 
         return answer;
     }
 
     public static int bfs(int[][] maps, int x, int y) {
-        visited[x][y] = true;
         int moveCount = 0;
         Queue<int[]> queue = new LinkedList<>();
+        visited[x][y] = true;
         queue.offer(new int[]{x, y});
-
-        // 목적지
-        int finishX = m - 1;
-        int finishY = n - 1;
 
         while(!queue.isEmpty()) {
             int[] currentXY = queue.poll();
 
+            // 목적지 도달
+            if(currentXY[0] == m - 1 && currentXY[1] == n -1) {
+                moveCount++;
+                break;
+            }
+
             int moveX = 0;
             int moveY = 0;
+            int shortestSum = Integer.MAX_VALUE;
 
-            for(int i = 0; i < 4; i++) {
+            for (int i = 0; i < 4; i++) {
+                if(currentXY[0] == m -1 && currentXY[1] == n -1) {
+                    break;
+                }
                 int nextX = currentXY[0] + dx[i];
                 int nextY = currentXY[1] + dy[i];
 
-                if(nextX >= 0 && nextX < m && nextY >= 0 && nextY < m &&
-                        visited[nextX][nextY] == true &&
+                // 방문하면 안되는 조건
+                // 1. m,n을 넘어서면 안됨
+                // 2. 방문했던 좌표는 제외
+                // 3. 벽인 좌표 제외
+                if (nextX >= 0 && nextX < m && nextY >= 0 && nextY < m &&
+                        !visited[nextX][nextY] &&
                         maps[nextX][nextY] == 1) {
 
-                    // 이동 하면 되는데 가장 가까운 좌표 구하기
-                    int shortestSum = Integer.MAX_VALUE;
+                    // 가장 가까운 길 구하기
                     int xySum = (m + n) - (nextX + nextY);
-                    if(shortestSum > xySum) {
+                    if (shortestSum > xySum) {
                         shortestSum = xySum;
                         moveX = nextX;
                         moveY = nextY;
