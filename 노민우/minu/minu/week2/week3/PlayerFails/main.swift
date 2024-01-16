@@ -33,4 +33,14 @@ import Foundation
 //        return answer
 //    }
 //}
+import Foundation
+
+class Solution {
+    func solution(participant: [String], completion: [String]) -> String{
+        var answer: String = ""
+        
+        
+        return answer
+    }
+}
 

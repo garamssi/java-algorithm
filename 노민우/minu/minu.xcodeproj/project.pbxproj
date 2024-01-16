@@ -84,6 +84,14 @@
 			path = homework;
 			sourceTree = "<group>";
 		};
+		13662C6F2B56E301008A28A2 /* PlayerFails */ = {
+			isa = PBXGroup;
+			children = (
+				1315216D2B45073700668CA0 /* main.swift */,
+			);
+			path = PlayerFails;
+			sourceTree = "<group>";
+		};
 		13C420D82B51208A0089D138 /* week2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +163,7 @@
 		13D2C3862B56DF8F00E3D3B5 /* week3 */ = {
 			isa = PBXGroup;
 			children = (
-				1315216D2B45073700668CA0 /* main.swift */,
+				13662C6F2B56E301008A28A2 /* PlayerFails */,
 			);
 			name = week3;
 			path = week2/week3;
