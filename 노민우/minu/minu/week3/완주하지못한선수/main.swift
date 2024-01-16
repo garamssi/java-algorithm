@@ -25,22 +25,32 @@ import Foundation
  ["marina", "josipa", "nikola", "vinko", "filipa"]    ["josipa", "filipa", "marina", "nikola"]    "vinko"
  ["mislav", "stanko", "mislav", "ana"]                     ["stanko", "ana", "mislav"]            "mislav"
  */
-//class Solution {
-//    func solution(participant: [String], completion: [String]) -> String{
-//        var answer: String = ""
-//        
-//        
-//        return answer
-//    }
-//}
+
 import Foundation
 
 class Solution {
     func solution(participant: [String], completion: [String]) -> String{
-        var answer: String = ""
-        
-        
-        return answer
+        var completionDict = [String: Int]()
+
+        // 참가 선수 이름을 기록하면서 동명이인 경우 카운트 증가
+        for p in participant {
+            completionDict[p, default: 0] += 1
+        }
+
+        // 완주한 선수 이름을 제거
+        for c in completion {
+            if let left = completionDict[c], left > 1 {
+                completionDict[c] = left - 1
+            } else {
+                completionDict.removeValue(forKey: c)
+            }
+        }
+
+        // 남아 있는 미완주 선수의 이름을 반환
+        return completionDict.first!.key
     }
 }
+
+let sol = Solution()
+sol.solution(participant:  ["marina", "josipa", "nikola", "vinko", "filipa"], completion: ["josipa", "filipa", "marina", "nikola"])
 

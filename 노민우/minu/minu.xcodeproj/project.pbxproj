@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1315216A2B45073700668CA0 /* minu */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = minu; sourceTree = BUILT_PRODUCTS_DIR; };
-		1315216D2B45073700668CA0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		134C88C12B56F1FB00D27628 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		135D1ECB2B46F6B8006DA069 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13C420D92B51220F0089D138 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13CB5FD12B4CFB9E00767FEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -61,9 +61,25 @@
 			children = (
 				135D1EBF2B46EE53006DA069 /* week1 */,
 				13C420D82B51208A0089D138 /* week2 */,
-				13D2C3862B56DF8F00E3D3B5 /* week3 */,
+				134C88BF2B56F1FB00D27628 /* week3 */,
 			);
 			path = minu;
+			sourceTree = "<group>";
+		};
+		134C88BF2B56F1FB00D27628 /* week3 */ = {
+			isa = PBXGroup;
+			children = (
+				134C88C02B56F1FB00D27628 /* 완주하지못한선수 */,
+			);
+			path = week3;
+			sourceTree = "<group>";
+		};
+		134C88C02B56F1FB00D27628 /* 완주하지못한선수 */ = {
+			isa = PBXGroup;
+			children = (
+				134C88C12B56F1FB00D27628 /* main.swift */,
+			);
+			path = "완주하지못한선수";
 			sourceTree = "<group>";
 		};
 		135D1EBF2B46EE53006DA069 /* week1 */ = {
@@ -82,14 +98,6 @@
 				13D2C37E2B56DDDB00E3D3B5 /* 42.빗물트래핑 */,
 			);
 			path = homework;
-			sourceTree = "<group>";
-		};
-		13662C6F2B56E301008A28A2 /* PlayerFails */ = {
-			isa = PBXGroup;
-			children = (
-				1315216D2B45073700668CA0 /* main.swift */,
-			);
-			path = PlayerFails;
 			sourceTree = "<group>";
 		};
 		13C420D82B51208A0089D138 /* week2 */ = {
@@ -158,15 +166,6 @@
 				13CB5FD62B4CFBD000767FEA /* mian.swift */,
 			);
 			path = "739.DailyTemperatures ";
-			sourceTree = "<group>";
-		};
-		13D2C3862B56DF8F00E3D3B5 /* week3 */ = {
-			isa = PBXGroup;
-			children = (
-				13662C6F2B56E301008A28A2 /* PlayerFails */,
-			);
-			name = week3;
-			path = week2/week3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
