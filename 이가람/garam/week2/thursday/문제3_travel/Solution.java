@@ -1,4 +1,4 @@
-package garam.week2.thursday.travel;
+package garam.week2.thursday.문제3_travel;
 
 
 

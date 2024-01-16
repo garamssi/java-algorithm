@@ -1,4 +1,4 @@
-package garam.week2.thursday.numsOfIslands;
+package garam.week2.thursday.문제1_numsOfIslands;
 
 // https://leetcode.com/problems/nums-of-islands
 public class Solution {

@@ -1,4 +1,4 @@
-package garam.week2.thursday.letterCombinationsOfAPhoneNumber;
+package garam.week2.thursday.문제2_letterCombinationsOfAPhoneNumber;
 
 //https://leetcode.com/problems/letter-combinations-of-a-phone-number
 
