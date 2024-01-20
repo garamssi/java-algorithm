@@ -27,6 +27,7 @@
 		13CB5FD12B4CFB9E00767FEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13CB5FD32B4CFB9E00767FEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13CB5FD52B4CFBAA00767FEA /* mian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mian.swift; sourceTree = "<group>"; };
+		13E436702B5BFEAA00760AAD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 		134C88BF2B56F1FB00D27628 /* week3 */ = {
 			isa = PBXGroup;
 			children = (
+				13E4366F2B5BFEAA00760AAD /* 70.CilmbingStairs */,
 				134C88C02B56F1FB00D27628 /* 완주하지못한선수 */,
 			);
 			path = week3;
@@ -167,6 +169,14 @@
 			);
 			name = 739.DailyTemperatures;
 			path = 20.ValidParentheses/739.DailyTemperatures;
+			sourceTree = "<group>";
+		};
+		13E4366F2B5BFEAA00760AAD /* 70.CilmbingStairs */ = {
+			isa = PBXGroup;
+			children = (
+				13E436702B5BFEAA00760AAD /* main.swift */,
+			);
+			path = 70.CilmbingStairs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
