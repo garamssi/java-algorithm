@@ -10,9 +10,8 @@ import Foundation
  1768. Merge Strings Alternately
  
  두 개의 문자열 word1과 word2가 제공됩니다.
- word1부터 시작하여 교대로 문자를 추가하여 문자열을 병합합니다.
+ word1부터 시작해 교대로 문자를 추가고 문자열을 병합합니다.
  문자열이 다른 문자열보다 길면 병합된 문자열 끝에 추가 문자를 추가합니다.
-
  병합된 문자열을 반환합니다.
  
  Example 1:
@@ -46,14 +45,15 @@ import Foundation
  1 <= word1.length, word2.length <= 100
  word1 and word2 consist of lowercase English letters.[word1과 word2는 영문 소문자로 구성됩니다.]
  
- 1)word1, 2를 순회하면서 문자를 합치고 더 긴 문자열이있으면 남은 문자들을 합친 문자열 뒤에 추가한다.
- 2)두 문자를 동시에 순회하면서 w1 하나 w2 하나 를 번갈아가면서 추가. 한 문자열이 끝나면 다른 문자열의 남은 문자들을 결과에 추가한다.
- 3)- for문을 사용해 문자 순회.
-   - 문자열 길이가 서로 다를 수 있으므로, 더 긴 길이의 문자열 만큼 반복한다.
-   - 루프가 완료되면 결과 문자열 반환.
+ 1) word1, 2를 순회하면서 문자를 합치고 더 긴 문자열이있으면 남은 문자들을 합친 문자열 뒤에 추가한다.
+ 2) 두 문자를 동시에 순회하면서 w1 하나 w2 하나 를 번갈아가면서 추가하고,
+    한 문자열이 끝나면 다른 문자열의 남은 문자들을 결과에 추가한다.
  
- 
+ 3) - for문을 사용해 문자 순회.
+    - 문자열 길이가 서로 다를 수 있으므로, 더 긴 길이의 문자열 만큼 반복한다.
+    - 루프가 완료되면 결과 문자열 반환.
  */
+
 class Solution {
     func mergeAlternately(_ word1: String, _ word2: String) -> String {
         var result = ""
@@ -77,4 +77,4 @@ class Solution {
 }
 
 let sol = Solution()
-sol.mergeAlternately("abcd", "pq")
+print(sol.mergeAlternately("abcd", "pq"))
