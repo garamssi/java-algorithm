@@ -3,6 +3,8 @@ package garam.week3.sunday.문제1_networkDelayTime;
 import java.util.*;
 
 // https://leetcode.com/problems/network-delay-time/description/
+// 네트워크 딜레이 타임
+// k에서 출발하여 (출발지, 도착지, 소요시간), 노드의 개수는 n
 public class Solution2 {
 	public static void main(String[] args) {
 		networkDelayTime(new int[][]{{2,1,1},{2,3,1},{3,4,1}}, 4, 2);
@@ -39,7 +41,7 @@ public class Solution2 {
 
 			// u 지점까지의 소요 시간이 아직 계산되지 않았다면 처리 시작
 			if (!dist.containsKey(u)){
-				// u지점까지의 소요 시간(dist_u)dmf rufrhk qustndp tkqdlq
+				// u지점까지의 소요 시간(dist_u)을 경과 변수에 삽입
 				dist.put(u, dist_u);
 				// u지점을 출발지로 한 경로가 있다면 처리 시작
 				if(graph.containsKey(u)){

@@ -3,7 +3,7 @@ package garam.week3.sunday.문제2_findCheapestPrice;
 import java.util.*;
 
 // https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
-
+// k 경유지 내 가장 저렴한 항공권
 public class Solution {
 	public static void main(String[] args) {
 		findCheapestPrice(4, new int[][]{{0, 1, 100}, {1, 2, 100}, {2, 0, 100}, {1, 3, 600}, {2, 3, 200}}, 0, 3, 1);
