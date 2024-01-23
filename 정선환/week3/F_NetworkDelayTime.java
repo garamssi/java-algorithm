@@ -1,7 +1,5 @@
 package week3;
 
-import practice.Dijkstra;
-
 import java.util.*;
 
 /**
@@ -10,12 +8,30 @@ import java.util.*;
  */
 public class F_NetworkDelayTime {
     public static void main(String[] args) {
+//        int[][] times = {
+//                {2, 1, 1},
+//                {2, 3, 1},
+//                {3, 4, 1},
+//        };
+//        System.out.println(networkDelayTime(times, 4, 2));
+
+//        int[][] times = {
+//                {1,2,1}
+//        };
+//        System.out.println(networkDelayTime(times, 2, 1));
+
         int[][] times = {
-                {2, 1, 1},
-                {2, 3, 1},
-                {3, 4, 1},
+                {1, 2, 1},
+                {2, 3, 2}
         };
-        System.out.println(networkDelayTime(times, 4, 2));
+        System.out.println(networkDelayTime(times, 3, 1));
+
+        // Fail Case
+//        int[][] times = {
+//                {1,2,1}
+//        };
+//        System.out.println(networkDelayTime(times, 2, 2));
+
     }
 
     static class Node {
@@ -45,7 +61,18 @@ public class F_NetworkDelayTime {
 
         priorityQueue.offer(new Node(n, k));
 
+        int distance = 0;
+        while(!priorityQueue.isEmpty()) {
+            Node currNode = priorityQueue.poll();
+            if(!costs.containsKey(currNode.nodeId)) {
+                costs.put(currNode.nodeId, currNode.distance);
 
-        return 0;
+                List<Node> nodes = graph.get(k);
+                for (Node node : nodes) {
+                    distance += node.distance;
+                }
+            }
+        }
+        return distance == 0 ? -1 : distance;
     }
 }
