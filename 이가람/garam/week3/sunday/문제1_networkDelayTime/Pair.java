@@ -1,4 +1,4 @@
-package garam.week3.thursday.문제1_networkDelayTime;
+package garam.week3.sunday.문제1_networkDelayTime;
 
 public class Pair<L, R> {
 	L left;

@@ -1,11 +1,11 @@
-package garam.week3.thursday.문제1_networkDelayTime;
+package garam.week3.sunday.문제1_networkDelayTime;
 
 import java.util.*;
 
 // https://leetcode.com/problems/network-delay-time/description/
 public class Solution2 {
 	public static void main(String[] args) {
-//		networkDelayTime();
+		networkDelayTime(new int[][]{{2,1,1},{2,3,1},{3,4,1}}, 4, 2);
 	}
 
 	public static int networkDelayTime(int[][] times, int n, int k) {
