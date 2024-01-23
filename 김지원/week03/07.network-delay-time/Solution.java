@@ -1,58 +1,57 @@
 import java.util.*;
 
 class Solution {
-    private static final int INF = (int) 1e9;
+    static final int INF = Integer.MAX_VALUE;
 
     public int networkDelayTime(int[][] times, int n, int k) {
-
         List<List<Node>> graph = new ArrayList<>();
-        int[] distance = new int[n + 1];
-        Arrays.fill(distance, INF);
-
         for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<>());
         }
-
         for (int[] time : times) {
             graph.get(time[0]).add(new Node(time[1], time[2]));
         }
 
-        PriorityQueue<Node> pq = new PriorityQueue<>();
-        pq.offer(new Node(k, 0));
-        distance[k] = 0;
+
+        Queue<Node> pq = new PriorityQueue<>();
+        pq.add(new Node(k, 0));
+
+        int[] dist = new int[n + 1];
+        Arrays.fill(dist, INF);
+
 
         while (!pq.isEmpty()) {
-            Node now = pq.poll();
+            Node cur = pq.poll();
+            int curIndex = cur.to;
+            int curDistance = cur.distance;
 
-            if (distance[now.index] < now.distance) {
+            if (dist[curIndex] != INF) {
                 continue;
             }
 
-            for (Node next : graph.get(now.index)) {
-                int cost = distance[now.index] + next.distance;
-                if (distance[next.index] > cost) {
-                    distance[next.index] = cost;
-                    pq.offer(new Node(next.index, cost));
-                }
+            dist[curIndex] = curDistance;
+            for (Node next : graph.get(curIndex)) {
+                int alt = curDistance + next.distance;
+                pq.add(new Node(next.to, alt));
             }
         }
-        int cnt = 0;
-        int maxValue = 0;
+
+        int maxDistance = -1;
         for (int i = 1; i <= n; i++) {
-            if (distance[i] != INF) {
-                cnt++;
-                maxValue = Math.max(maxValue, distance[i]);
+            if (dist[i] == INF) {
+                return -1;
             }
+            maxDistance = Math.max(maxDistance, dist[i]);
         }
-        return cnt == n ? maxValue : -1;
+        return maxDistance;
     }
 
     static class Node implements Comparable<Node> {
-        int index;
+        int to;
         int distance;
 
-        public Node(int index, int distance) {
-            this.index = index;
+        public Node(int to, int distance) {
+            this.to = to;
             this.distance = distance;
         }
 
