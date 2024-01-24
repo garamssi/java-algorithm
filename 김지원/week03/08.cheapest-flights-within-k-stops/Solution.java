@@ -1,44 +1,86 @@
-import java.util.*;
+package org.example;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+
+public class Main {
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int n = 9;
+        int[][] flights = {
+                {0, 4, 20}, {4, 5, 20}, {5, 6, 20}, {6, 1, 40}, {1, 2, 200},
+                {0, 7, 30}, {7, 8, 30}, {8, 1, 60}, {1, 3, 50}, {3, 2, 50}
+        };
+        int src = 0, dst = 2, k = 4;
+        int rs = solution.findCheapestPrice(n, flights, src, dst, k);
+        System.out.println(rs);
+    }
+}
 
 class Solution {
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
-        Map<Integer, Map<Integer, Integer>> graph = new HashMap<>();
-        for (int[] flight : flights) {
-            graph.putIfAbsent(flight[0], new HashMap<>());
-            graph.get(flight[0]).put(flight[1], flight[2]);
+
+        List<List<Node>> graph = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
         }
 
-        Queue<List<Integer>> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a.get(1)));
-        pq.add(Arrays.asList(src, 0, 0));
+        for (int[] flight : flights) {
+            graph.get(flight[0]).add(new Node(flight[1], flight[2]));
+        }
 
-        // 타임 아웃을 방지하기 위해 한번 방문한 경로는 저장해두는 맵 선언
-        Map<Integer, Integer> visited = new HashMap<>();
+
+        // 해당 노드의 진행 경로의 수 저장, 방문하지 않은 노드는 -1
+        int[] visited = new int[n];
+        Arrays.fill(visited, -1);
+
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        pq.add(new Node(src, 0, 0));
 
         while (!pq.isEmpty()) {
-            List<Integer> cur = pq.poll();
-            int u = cur.get(0);
-            int price_u = cur.get(1);
-            int k_visited = cur.get(2);
+            Node now = pq.poll();
 
-            if (u == dst) {
-                return price_u;
+            if (now.index == dst) {
+                return now.distance;
             }
 
-            visited.put(u, k_visited);
+            visited[now.index] = now.visitedCnt;
 
-            if (k_visited <= k) {
-                k_visited += 1;
+            if (now.visitedCnt > k) {
+                continue;
+            }
 
-                if (graph.containsKey(u)) {
-                    for (Map.Entry<Integer, Integer> v : graph.get(u).entrySet()) {
-                        if (!visited.containsKey(v.getKey()) || k_visited < visited.get(v.getKey())) {
-                            int alt = price_u + v.getValue();
-                            pq.add(Arrays.asList(v.getKey(), alt, k_visited));
-                        }
-                    }
+            for (Node next : graph.get(now.index)) {
+                if (visited[next.index] == -1 || now.visitedCnt < visited[next.index]) {
+                    int cost = now.distance + next.distance;
+                    pq.offer(new Node(next.index, cost, now.visitedCnt + 1));
                 }
             }
         }
         return -1;
+    }
+
+    static class Node implements Comparable<Node> {
+        final int index;
+        final int distance;
+        int visitedCnt;
+
+        public Node(int index, int distance, int visitedCnt) {
+            this.index = index;
+            this.distance = distance;
+            this.visitedCnt = visitedCnt;
+        }
+
+        public Node(int index, int distance) {
+            this.index = index;
+            this.distance = distance;
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            return this.distance - o.distance;
+        }
     }
 }

@@ -5,8 +5,10 @@ import java.util.Queue;
 class Solution {
 
     Queue<Position> pq = new PriorityQueue<>(Comparator.comparingInt(o -> o.distance));
+    
     int[] dx = {0, 0, -1, 1};
     int[] dy = {1, -1, 0, 0};
+
     public int solution(int[][] maps) {
         pq.add(new Position(0, 0, 1));
 

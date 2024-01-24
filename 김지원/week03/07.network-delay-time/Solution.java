@@ -1,57 +1,58 @@
 import java.util.*;
 
 class Solution {
-    static final int INF = Integer.MAX_VALUE;
+    
+    static final int INF = (int) 1e9;
+    
+    int[] distance;
 
     public int networkDelayTime(int[][] times, int n, int k) {
         List<List<Node>> graph = new ArrayList<>();
         for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<>());
         }
+        distance = new int[n + 1];
+        Arrays.fill(distance, INF);
+
         for (int[] time : times) {
             graph.get(time[0]).add(new Node(time[1], time[2]));
         }
 
-
         Queue<Node> pq = new PriorityQueue<>();
-        pq.add(new Node(k, 0));
-
-        int[] dist = new int[n + 1];
-        Arrays.fill(dist, INF);
-
+        pq.offer(new Node(k, 0));
 
         while (!pq.isEmpty()) {
-            Node cur = pq.poll();
-            int curIndex = cur.to;
-            int curDistance = cur.distance;
+            Node now = pq.poll();
 
-            if (dist[curIndex] != INF) {
+            if (distance[now.index] != INF) {
                 continue;
             }
 
-            dist[curIndex] = curDistance;
-            for (Node next : graph.get(curIndex)) {
-                int alt = curDistance + next.distance;
-                pq.add(new Node(next.to, alt));
+            distance[now.index] = now.distance;
+
+            for (Node next : graph.get(now.index)) {
+                int cost = now.distance + next.distance;
+                pq.offer(new Node(next.index, cost));
             }
         }
 
-        int maxDistance = -1;
+        int maxValue = -1;
         for (int i = 1; i <= n; i++) {
-            if (dist[i] == INF) {
+            if (distance[i] == INF) {
                 return -1;
             }
-            maxDistance = Math.max(maxDistance, dist[i]);
+            maxValue = Math.max(maxValue, distance[i]);
         }
-        return maxDistance;
+        
+        return maxValue;
     }
 
     static class Node implements Comparable<Node> {
-        int to;
-        int distance;
+        final int index;
+        final int distance;
 
-        public Node(int to, int distance) {
-            this.to = to;
+        public Node(int index, int distance) {
+            this.index = index;
             this.distance = distance;
         }
 
