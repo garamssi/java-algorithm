@@ -9,27 +9,18 @@ class Solution {
     }
 
     public String reverseWords(String s) {
-        Queue<Character> queue = new LinkedList<>();
         List<String> list = new ArrayList<>();
 
         String word = "";
         for (char c : s.toCharArray()) {
             if (c != ' ') {
-                queue.offer(c);
+                word += c;
             } else {
-                while (!queue.isEmpty()) {
-                    word += queue.poll();
+                if (!word.isEmpty()) {
+                    list.add(word);
+                    word = "";
                 }
             }
-            if (!word.isEmpty()) {
-                list.add(word);
-                word = "";
-            }
-        }
-
-        word = "";
-        while (!queue.isEmpty()) {
-            word += queue.poll();
         }
 
         if (!word.isEmpty()) {
