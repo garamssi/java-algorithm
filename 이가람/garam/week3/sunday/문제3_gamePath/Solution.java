@@ -1,6 +1,9 @@
-package garam.week3.thursday.문제3_gamePath;
+package garam.week3.sunday.문제3_gamePath;
 
 import java.util.*;
+
+
+// https://school.programmers.co.kr/learn/courses/30/lessons/1844
 
 public class Solution {
 
@@ -8,10 +11,10 @@ public class Solution {
 	public static Queue<Position> pq = new PriorityQueue<>(Comparator.comparingInt(o -> o.distance));
 
 	public static void main(String[] args) {
-
+		System.out.println(start(new int[][]{{1, 0, 1, 1, 1}, {1, 0, 1, 0, 1}, {1, 0, 1, 1, 1}, {1, 1, 1, 0, 1}, {0, 0, 0, 0, 1}}));
 	}
 
-	public class Position {
+	public static class Position {
 		final int y;
 		final int x;
 		final int distance;
@@ -23,8 +26,8 @@ public class Solution {
 		}
 	}
 
-	public void findPath(int y, int x, int distance, int[][] maps) {
-		if(y >= 0 && x < maps.length && x >= 0 && x < maps[0].length && maps[y][x] != 0) {
+	public static void findPath(int y, int x, int distance, int[][] maps) {
+		if(y >= 0 && y < maps.length && x >= 0 && x < maps[0].length && maps[y][x] != 0) {
 			// 이미 지나온 경로는 더 이상 거치지 않도록 0으로 설정
 			maps[y][x] = 0;
 			// 현재 위치와 거리 +1 우선순위 큐에 삽입
@@ -32,7 +35,7 @@ public class Solution {
 		}
 	}
 
-	public int start(int[][] maps) {
+	public static int start(int[][] maps) {
 		// 출발지부터 삽입
 		pq.add(new Position(0, 0, 1));
 		// 해당 지점까지의 거리 결과를 저장하는 변수 선언

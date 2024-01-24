@@ -1,55 +1,55 @@
 import java.util.*;
 
 class Solution {
-    private static final int INF = (int) 1e9;
+    
+    static final int INF = (int) 1e9;
+    
+    int[] distance;
 
     public int networkDelayTime(int[][] times, int n, int k) {
-
         List<List<Node>> graph = new ArrayList<>();
-        int[] distance = new int[n + 1];
-        Arrays.fill(distance, INF);
-
         for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<>());
         }
+        distance = new int[n + 1];
+        Arrays.fill(distance, INF);
 
         for (int[] time : times) {
             graph.get(time[0]).add(new Node(time[1], time[2]));
         }
 
-        PriorityQueue<Node> pq = new PriorityQueue<>();
+        Queue<Node> pq = new PriorityQueue<>();
         pq.offer(new Node(k, 0));
-        distance[k] = 0;
 
         while (!pq.isEmpty()) {
             Node now = pq.poll();
 
-            if (distance[now.index] < now.distance) {
+            if (distance[now.index] != INF) {
                 continue;
             }
 
+            distance[now.index] = now.distance;
+
             for (Node next : graph.get(now.index)) {
-                int cost = distance[now.index] + next.distance;
-                if (distance[next.index] > cost) {
-                    distance[next.index] = cost;
-                    pq.offer(new Node(next.index, cost));
-                }
+                int cost = now.distance + next.distance;
+                pq.offer(new Node(next.index, cost));
             }
         }
-        int cnt = 0;
-        int maxValue = 0;
+
+        int maxValue = -1;
         for (int i = 1; i <= n; i++) {
-            if (distance[i] != INF) {
-                cnt++;
-                maxValue = Math.max(maxValue, distance[i]);
+            if (distance[i] == INF) {
+                return -1;
             }
+            maxValue = Math.max(maxValue, distance[i]);
         }
-        return cnt == n ? maxValue : -1;
+        
+        return maxValue;
     }
 
     static class Node implements Comparable<Node> {
-        int index;
-        int distance;
+        final int index;
+        final int distance;
 
         public Node(int index, int distance) {
             this.index = index;

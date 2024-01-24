@@ -46,22 +46,20 @@ public class Main {
     private void dijkstra(int start) {
         PriorityQueue<Node> pq = new PriorityQueue<>();
         pq.offer(new Node(start, 0));
-        distance[start] = 0;
+
 
         while (!pq.isEmpty()) {
             Node now = pq.poll();
 
-            if (distance[now.getIndex()] < now.getDistance()) {
+            // now의 최소값이 초기화되었냐?
+            if (distance[now.getIndex()] != INF) {
                 continue;
             }
 
+            distance[now.index] = now.distance;
             for (Node next : graph.get(now.getIndex())) {
-                int cost = distance[now.getIndex()] + next.getDistance(); // start -> now -> next
-
-                if (cost < distance[next.getIndex()]) {
-                    distance[next.getIndex()] = cost;
-                    pq.offer(new Node(next.getIndex(), cost));
-                }
+                int cost = now.distance + next.getDistance(); // start -> now -> next
+                pq.offer(new Node(next.getIndex(), cost));
             }
         }
     }

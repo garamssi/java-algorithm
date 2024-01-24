@@ -1,10 +1,12 @@
-package garam.week3.thursday.문제2_findCheapestPrice;
+package garam.week3.sunday.문제2_findCheapestPrice;
 
 import java.util.*;
 
+// https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
+// k 경유지 내 가장 저렴한 항공권
 public class Solution {
 	public static void main(String[] args) {
-
+		findCheapestPrice(4, new int[][]{{0, 1, 100}, {1, 2, 100}, {2, 0, 100}, {1, 3, 600}, {2, 3, 200}}, 0, 3, 1);
 	}
 
 	public static int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
@@ -49,9 +51,9 @@ public class Solution {
 				// 처리하면서 진행경로 +1
 				k_visited += 1;
 				// u기점을 출발지로 한 경로가 있다면 처리 시작
-				if(graph.containsKey(u)){
+				if(graph.containsKey(u)) {
 					// u 지점을 출발지로 한 모든 경로 순회
-					for(Map.Entry<Integer, Integer> v : graph.get(u).entrySet()){
+					for(Map.Entry<Integer, Integer> v : graph.get(u).entrySet()) {
 						// 이미 계산한 경로는 큐에 삽입하지 않는 형태로 풀이를 최적화한다.
 						// 그러나 아직 계산한 경로가 아니거나, 진행 경로(k_visited)가 기존보다 작다면
 						// 도착지(dst)까지는 또 다른 최소 비용을 계산할 가능성이 있으므로 큐에 삽입해
