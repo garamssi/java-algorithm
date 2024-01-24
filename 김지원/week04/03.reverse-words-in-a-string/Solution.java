@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 class Solution {
 
@@ -9,25 +11,25 @@ class Solution {
     }
 
     public String reverseWords(String s) {
-        List<String> list = new ArrayList<>();
+        List<String> wordList = new ArrayList<>();
 
         String word = "";
-        for (char c : s.toCharArray()) {
-            if (c != ' ') {
-                word += c;
+        for (char ch : s.toCharArray()) {
+            if (ch != ' ') {
+                word += ch;
             } else {
                 if (!word.isEmpty()) {
-                    list.add(word);
+                    wordList.add(word);
                     word = "";
                 }
             }
         }
 
         if (!word.isEmpty()) {
-            list.add(word);
+            wordList.add(word);
         }
 
-        Collections.reverse(list);
-        return String.join(" ", list);
+        Collections.reverse(wordList);
+        return String.join(" ", wordList);
     }
 }
