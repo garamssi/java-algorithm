@@ -2,6 +2,12 @@ package garam.week4.thursday.문제1_MergeStringsAlternately;
 
 import java.util.*;
 
+/**
+ * https://leetcode.com/problems/move-zeroes/description/?envType=study-plan-v2&envId=leetcode-75
+ * Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+ * 0만 맨 끝으로 보내기
+ */
+
 public class Solution {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(moveZeroes(new int[]{0, 1, 0, 3, 12})));
