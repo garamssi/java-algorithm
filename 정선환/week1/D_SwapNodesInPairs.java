@@ -1,12 +1,12 @@
 package week1;
 
 /**
- * Given a linked list, swap every two adjacent nodes and return its head.
- * You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+ * https://leetcode.com/problems/swap-nodes-in-pairs/description/
+ * 24. Swap Nodes in Pairs
  */
 public class D_SwapNodesInPairs {
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
         ListNode() {
@@ -18,39 +18,50 @@ public class D_SwapNodesInPairs {
         ListNode(int val, ListNode next) {
             this.val = val; this.next = next;
         }
+
+        public String toArray() {
+            StringBuilder sb = new StringBuilder();
+
+            ListNode currNode = this;
+            while(currNode != null) {
+                sb.append(currNode.val);
+                if(currNode.next != null) {
+                    currNode = currNode.next;
+                }else {
+                    currNode = null;
+                }
+            }
+            return sb.toString();
+        }
     }
 
     public static void main(String[] args) {
+        int[] input = {1, 2, 3, 4};
 
-    }
+        ListNode node = new ListNode(input[0]);
 
-    public ListNode swapPairs(ListNode head) {
-        if(null == head)
-            return null;
+        for(int i = 1; i < input.length; i++) {
+            ListNode currNode = node;
+            while(currNode.next != null) {
+                currNode = currNode.next;
+            }
 
-        if(null == head.next)
-            return head;
-
-        ListNode tempNode = head;
-        head = head.next;
-        tempNode.next = head.next;
-        head.next = tempNode;
-
-        ListNode parentNode = tempNode;
-        tempNode = tempNode.next;
-        while(null != tempNode && null != tempNode.next){
-            ListNode node = tempNode;
-            ListNode nextNode = tempNode.next;
-
-            parentNode.next = nextNode;
-            node.next = nextNode.next;
-            nextNode.next = node;
-
-            parentNode = node;
-            tempNode = node.next;
+            currNode.next = new ListNode(input[i]);
         }
 
-        return head;
+        ListNode listNode = swapPairs(node);
+        System.out.println(listNode.toArray());
+    }
+
+    public static ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode second = head.next;
+        ListNode third = second.next;
+
+        second.next = head;
+        head.next = swapPairs(third);
+
+        return second;
     }
 
 
