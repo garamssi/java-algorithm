@@ -33,9 +33,9 @@ public class Solution {
 		while(!pq.isEmpty()) {
 			List<Integer> cur = pq.poll();
 			// 우선순위 큐의 항목은 List<Integer>이므로 인덱스 위치로 (도착지, 비용, 진행 경로) 각각 추출
-			int u = cur.get(0);
-			int price_u = cur.get(1);
-			int k_visited = cur.get(2);
+			int u = cur.get(0); // 도착지
+			int price_u = cur.get(1); // 비용
+			int k_visited = cur.get(2); // 진행 경로
 
 			// 만약 큐에서 추출한 값이 도착지 dst라면 정답으로 리턴
 			if(u == dst) {

@@ -11,7 +11,12 @@ public class Solution {
 	public static Queue<Position> pq = new PriorityQueue<>(Comparator.comparingInt(o -> o.distance));
 
 	public static void main(String[] args) {
-		System.out.println(start(new int[][]{{1, 0, 1, 1, 1}, {1, 0, 1, 0, 1}, {1, 0, 1, 1, 1}, {1, 1, 1, 0, 1}, {0, 0, 0, 0, 1}}));
+		System.out.println(start(new int[][]{
+				  {1, 0, 1, 1, 1}
+				, {1, 0, 1, 0, 1}
+				, {1, 0, 1, 1, 1}
+				, {1, 1, 1, 0, 1}
+				, {0, 0, 0, 0, 1}}));
 	}
 
 	public static class Position {
@@ -46,9 +51,11 @@ public class Solution {
 			Position cur = pq.poll();
 
 			// 아직 계산하지 않은 지점이라면 계산 결과 삽입
-			// 키/값 형태이므로 키는(y * 1000 + x)로 구성
+			// 키/값 형태이므로 키는(y * 10 + x)로 구성
+			// 1000을 사용하는 이유는
 			if(!dist.containsKey(cur.y * 1000 + cur.x)) {
 				dist.put(cur.y * 1000 + cur.x, cur);
+
 
 				findPath(cur.y, cur.x + 1, cur.distance, maps); // 동
 				findPath(cur.y, cur.x - 1, cur.distance, maps); // 서
