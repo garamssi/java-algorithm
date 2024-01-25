@@ -36,7 +36,7 @@ public class C_BestTimeToBuyAndSellStock {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        maxProfit(nums);
+        System.out.println(maxProfit(nums));
     }
 
     public static int maxProfit(int[] prices) {
