@@ -3,4 +3,38 @@
    uuid = "8887DDD9-A64F-4307-9ADF-C9B008A7F178"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89CE1408-1F9A-4431-91EF-2A9CA71CDE9F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "minu/week4/1_&#x1106;&#x116e;&#x11ab;&#x110c;&#x1161;&#x110b;&#x1167;&#x11af;&#x110b;&#x1173;&#x11af;&#x1100;&#x116d;&#x1103;&#x1162;&#x1105;&#x1169;&#x1107;&#x1167;&#x11bc;&#x1112;&#x1161;&#x11b8;/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE31DCE0-82FF-41C5-B0EC-0CAE3FAEC266"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "minu/week4/1_&#x1106;&#x116e;&#x11ab;&#x110c;&#x1161;&#x110b;&#x1167;&#x11af;&#x110b;&#x1173;&#x11af;&#x1100;&#x116d;&#x1103;&#x1162;&#x1105;&#x1169;&#x1107;&#x1167;&#x11bc;&#x1112;&#x1161;&#x11b8;/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
