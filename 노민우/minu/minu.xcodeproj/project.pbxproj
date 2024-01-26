@@ -178,9 +178,8 @@
 		13DC65C32B63FB04003D1F70 /* week4 */ = {
 			isa = PBXGroup;
 			children = (
-				13DC65C42B63FB36003D1F70 /* 1_문자열을교대로병합 */,
-				13DC65C62B63FB36003D1F70 /* 2_문자열의최대공약수 */,
-				13DC65C82B63FB37003D1F70 /* 3_0움직여 */,
+				13DC65CA2B63FC21003D1F70 /* 월요일 */,
+				13DC65CB2B63FC30003D1F70 /* 목요일 */,
 			);
 			path = week4;
 			sourceTree = "<group>";
@@ -201,12 +200,31 @@
 			path = "2_문자열의최대공약수";
 			sourceTree = "<group>";
 		};
-		13DC65C82B63FB37003D1F70 /* 3_0움직여 */ = {
+		13DC65C82B63FB37003D1F70 /* 1_0s움직여 */ = {
 			isa = PBXGroup;
 			children = (
 				13DC65C92B63FB37003D1F70 /* main.swift */,
 			);
-			path = "3_0움직여";
+			path = "1_0s움직여";
+			sourceTree = "<group>";
+		};
+		13DC65CA2B63FC21003D1F70 /* 월요일 */ = {
+			isa = PBXGroup;
+			children = (
+				13DC65C42B63FB36003D1F70 /* 1_문자열을교대로병합 */,
+				13DC65C62B63FB36003D1F70 /* 2_문자열의최대공약수 */,
+			);
+			name = "월요일";
+			path = "월요일";
+			sourceTree = "<group>";
+		};
+		13DC65CB2B63FC30003D1F70 /* 목요일 */ = {
+			isa = PBXGroup;
+			children = (
+				13DC65C82B63FB37003D1F70 /* 1_0s움직여 */,
+			);
+			name = "목요일";
+			path = "목요일";
 			sourceTree = "<group>";
 		};
 		13E4366F2B5BFEAA00760AAD /* 70.CilmbingStairs */ = {
