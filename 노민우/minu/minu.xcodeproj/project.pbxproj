@@ -6,6 +6,10 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		13DB46752B64BBA8001429A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D71F4D2B640169003A7FA8 /* main.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		131521682B45073700668CA0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -27,6 +31,7 @@
 		13CB5FD12B4CFB9E00767FEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13CB5FD32B4CFB9E00767FEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13CB5FD52B4CFBAA00767FEA /* mian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mian.swift; sourceTree = "<group>"; };
+		13D71F4D2B640169003A7FA8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13DC65C52B63FB36003D1F70 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13DC65C72B63FB36003D1F70 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13DC65C92B63FB37003D1F70 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -175,6 +180,14 @@
 			path = 20.ValidParentheses/739.DailyTemperatures;
 			sourceTree = "<group>";
 		};
+		13D71F4C2B640134003A7FA8 /* IsSubsequence */ = {
+			isa = PBXGroup;
+			children = (
+				13D71F4D2B640169003A7FA8 /* main.swift */,
+			);
+			path = IsSubsequence;
+			sourceTree = "<group>";
+		};
 		13DC65C32B63FB04003D1F70 /* week4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				13DC65C82B63FB37003D1F70 /* 1_0s움직여 */,
+				13D71F4C2B640134003A7FA8 /* IsSubsequence */,
 			);
 			name = "목요일";
 			path = "목요일";
@@ -293,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13DB46752B64BBA8001429A3 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
