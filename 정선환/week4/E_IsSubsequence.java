@@ -6,17 +6,27 @@ package week4;
  */
 public class E_IsSubsequence {
     public static void main(String[] args) {
-//        System.out.println(isSubsequence("abc", "ahbgdc"));
-        System.out.println(isSubsequence("aec", "abcde"));
+        System.out.println(isSubsequence("", "abc"));
     }
 
     public static boolean isSubsequence(String s, String t) {
-        int i = 0, j = 0;
+        if(s.length() == 0) {
+            return true;
+        }
 
-        while (i < s.length() && j < t.length())
-            if (s.charAt(i) == t.charAt(j++))
-                i++;
+        int sIndex = 0;
+        int tLength = t.length();
 
-        return i == s.length();
+        for(int i = 0; i < tLength; i++) {
+            if(s.charAt(sIndex) == t.charAt(i)) {
+                sIndex ++;
+            }
+
+            if(sIndex == s.length()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
