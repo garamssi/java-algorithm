@@ -6,10 +6,6 @@
 	objectVersion = 56;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		13DB46752B64BBA8001429A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D71F4D2B640169003A7FA8 /* main.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		131521682B45073700668CA0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -36,6 +32,7 @@
 		13DC65C72B63FB36003D1F70 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13DC65C92B63FB37003D1F70 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		13E436702B5BFEAA00760AAD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		13FADAF62B69311C00659036 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +69,7 @@
 				13C420D82B51208A0089D138 /* week2 */,
 				134C88BF2B56F1FB00D27628 /* week3 */,
 				13DC65C32B63FB04003D1F70 /* week4 */,
+				13FADAF42B6930EF00659036 /* week5 */,
 			);
 			path = minu;
 			sourceTree = "<group>";
@@ -249,6 +247,23 @@
 			path = 70.CilmbingStairs;
 			sourceTree = "<group>";
 		};
+		13FADAF42B6930EF00659036 /* week5 */ = {
+			isa = PBXGroup;
+			children = (
+				13FADAF52B69310600659036 /* 두배열의차이점찾기 */,
+			);
+			path = week5;
+			sourceTree = "<group>";
+		};
+		13FADAF52B69310600659036 /* 두배열의차이점찾기 */ = {
+			isa = PBXGroup;
+			children = (
+				13FADAF62B69311C00659036 /* main.swift */,
+			);
+			name = "두배열의차이점찾기";
+			path = "두배열의차이점찾기";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13DB46752B64BBA8001429A3 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
