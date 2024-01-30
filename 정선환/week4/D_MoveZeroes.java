@@ -7,25 +7,23 @@ package week4;
 public class D_MoveZeroes {
 
     public static void main(String[] args) {
-        int[] nums = {4,2,4,0,0,3,0,5,1,0};
-//        int[] nums = {0,1,0,3,12};
-        int[] answer = moveZeroes(nums);
-
-        for(int i = 0; i < answer.length; i++) {
-            System.out.println(answer[i]);
-        }
+        int[] nums = {0,1,0,3,12};
+        moveZeroes(nums);
     }
 
-    public static int[] moveZeroes(int[] nums) {
-        int left = 0;
-        for (int right = 0; right < nums.length; right++) {
-            if (nums[right] != 0) {
-                int tmp = nums[right];
-                nums[right] = nums[left];
-                nums[left] = tmp;
-                left++;
+    public static void moveZeroes(int[] nums) {
+        int zeroIndex = 0;
+        int length = nums.length;
+
+        for(int i = 0; i < length; i++) {
+            if(nums[i] != 0) {
+                nums[zeroIndex] = nums[i];
+                zeroIndex++;
             }
         }
-        return nums;
+
+        for(; zeroIndex < length; zeroIndex++) {
+            nums[zeroIndex] = 0;
+        }
     }
 }
