@@ -4,13 +4,12 @@ import java.util.*;
 두개의 단어가 "close"한 문자인가?
 
 operation1: 기존 문자 중 두 개의 문자를 서로 교환한다.
-- "close" 하려면, 같은 종류의 문자들을 가져야된다.
+- "close" 하려면, 같은 종류의 문자들을 가져야된다. word1 = abc, word2=bca
 
-operation2: 기존 문자 중 하나를 다른 기존 문자로 변환하고, 나머지 문자도 동일한 방식으로 변경한다.
+operation2: 기존 한 문자와 같은 모든 문자를, 다른 한 문자와 같은 모든 문자들과 교환한다.
 - "close" 하려면, 문자들의 개수 빈도가 같아야 한다.
  word1 => aaabbc {a=3, b=2, c=1}
  word2 => bbbaac {a=2, b=3, c=1}
-
  */
 class Solution {
 
@@ -37,18 +36,16 @@ class Solution {
             word2Map.put(ch, word2Map.getOrDefault(ch, 0) + 1);
         }
 
+        // 동일한 문자들의 집합인지 확인
         for (Character ch : word1Map.keySet()) {
-            if (word1Map.containsKey(ch) != word2Map.containsKey(ch)) {
+            if (!word2Map.containsKey(ch)) {
                 return false;
             }
-            /*
-            word1Map.containsKey(ch), word2Map.containsKey(ch) => ture
-            !word1Map.containsKey(ch), !word2Map.containsKey(ch) => true
-
-            // 동일한 문자들이 존재하지 않을 때 => false
-            word1Map.containsKey(ch), !word2Map.containsKey(ch) => false
-            !word1Map.containsKey(ch), word2Map.containsKey(ch) => false
-             */
+        }
+        for (Character ch : word2Map.keySet()) {
+            if (!word1Map.containsKey(ch)) {
+                return false;
+            }
         }
 
         // 문자의 빈도가 같은지 계산
@@ -82,6 +79,10 @@ class Solution {
             if (word2Arr[i] > 0 && word1Arr[i] == 0) {
                 return false;
             }
+
+//            if(((word1Arr[i] == 0) != (word2Arr[i] == 0))){
+//                return false;
+//            }
         }
 
         // 문자의 빈도가 같은지 계산
