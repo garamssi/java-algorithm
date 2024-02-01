@@ -8,7 +8,8 @@ import java.util.*;
  *
  * A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
  *
- * s문자가 t에 포함되어 있는지? 단, 순서는 바뀌면 안됨
+ * s문자가 t에 포함되어 있는지? 단, s 순서는 바뀌면 안됨
+ *
  */
 
 public class Solution {
@@ -28,10 +29,9 @@ public class Solution {
         }
 
         // 포함 개수 카운트용
-        List<Character> result = new ArrayList<>();
-
         int index = 0;
         int sLength = s.length();
+
         for (int i = 0; i < t.length(); i++) {
 
             if ( sLength == index) {
@@ -39,13 +39,11 @@ public class Solution {
             }
 
             if (s.charAt(index) == t.charAt(i)) {
-                result.add(s.charAt(index));
                 index++;
             }
 
-
         }
 
-        return result.size() == s.length();
+        return index == sLength;
     }
 }
