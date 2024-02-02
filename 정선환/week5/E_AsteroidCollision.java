@@ -21,14 +21,7 @@ public class E_AsteroidCollision {
         Deque<Integer> stack = new ArrayDeque<>();
 
         for(int i = 0; i < length; i++) {
-            int asteroid = asteroids[i];
-            if(stack.isEmpty()) {
-                stack.push(asteroid);
-                continue;
-            }
-
-            collisionCheck(stack, asteroid);
-
+            collisionCheck(stack, asteroids[i]);
         }
 
         // 정답 데이터 담기
