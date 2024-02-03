@@ -24,7 +24,7 @@ public class D_RemovingStarsFromAString {
             }
         }
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         while(!stack.isEmpty()) {
             sb.append(stack.pollLast());
         }
