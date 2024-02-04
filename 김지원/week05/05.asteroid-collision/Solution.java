@@ -2,9 +2,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 class Solution {
-    static final int NOT_COLLISION = 1001;
-    static final int BOTH_EXPLOSION = 0;
-
+    
     public static void main(String[] args) {
         int[] asteroids = {5, 10, -5};
         int[] rs = new Solution().asteroidCollision(asteroids);
