@@ -21,8 +21,8 @@ class Solution {
                 while (!stack.isEmpty() && Character.isDigit(stack.peek())) {
                     digits = stack.pop() + digits;
                 }
-                int digit = Integer.parseInt(digits);
-                for (int i = 0; i < digit; i++) {
+                int times = Integer.parseInt(digits);
+                for (int i = 0; i < times; i++) {
                     for (char wch : word.toCharArray()) {
                         stack.push(wch);
                     }
