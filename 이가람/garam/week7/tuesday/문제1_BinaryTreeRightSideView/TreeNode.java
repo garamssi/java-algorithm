@@ -1,4 +1,4 @@
-package garam.week7.문제2_MaximumLevelSumOfBinaryTree;
+package week7.tuesday.문제1_BinaryTreeRightSideView;
 
 public class TreeNode {
     int val;
