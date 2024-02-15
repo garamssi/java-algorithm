@@ -29,18 +29,18 @@ public class B_MaximumLevelSumOfABinaryTree {
     }
     
     public static void main(String[] args) {
-//        TreeNode root = new TreeNode(1);
-//        root.left = new TreeNode(7);
-//        root.right = new TreeNode(0);
-//        root.left.left = new TreeNode(7);
-//        root.left.right = new TreeNode(-8);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(7);
+        root.right = new TreeNode(0);
+        root.left.left = new TreeNode(7);
+        root.left.right = new TreeNode(-8);
 
-        TreeNode root = new TreeNode(-100);
-        root.left = new TreeNode(-200);
-        root.right = new TreeNode(-300);
-        root.left.left = new TreeNode(-20);
-        root.left.right = new TreeNode(-5);
-        root.right.left = new TreeNode(-10);
+//        TreeNode root = new TreeNode(-100);
+//        root.left = new TreeNode(-200);
+//        root.right = new TreeNode(-300);
+//        root.left.left = new TreeNode(-20);
+//        root.left.right = new TreeNode(-5);
+//        root.right.left = new TreeNode(-10);
 
         System.out.println(maxLevelSum(root));
     }
