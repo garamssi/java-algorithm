@@ -62,7 +62,7 @@ public class Solution {
                     int x = point[0] + dir[0];
                     int y = point[1] + dir[1];
 
-                    // 이미 신선한 오렌지가 아니면 스킵,
+                    // 신선한 오렌지가 아니면 스킵,
                     if (x < 0 || y < 0 || x >= rows || y >= cols || grid[x][y] != 1) continue;
 
                     grid[x][y] = 2;

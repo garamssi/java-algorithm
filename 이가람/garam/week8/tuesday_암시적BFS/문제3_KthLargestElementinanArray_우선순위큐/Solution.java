@@ -37,6 +37,9 @@ public class Solution {
 
         int index = 1;
 
+//        [3,2,1,5,6,4]
+//        [6, 5, 4, 3, 2 ,1]
+//        k = 2
         while (!queue.isEmpty()) {
             if(index == k) {
                 return queue.poll();
