@@ -6,7 +6,7 @@ import java.util.Scanner;
  * https://leetcode.com/problems/guess-number-higher-or-lower/description/?envType=study-plan-v2&envId=leetcode-75
  * 374. Guess Number Higher or Lower
  */
-public class D_GuessNumberHigherOrLower {
+public class G_GuessNumberHigherOrLower {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
