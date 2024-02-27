@@ -1,9 +1,27 @@
 package garam.week8.sunday_BinarySearch.문제3_FindPeakElement;
 
 import java.util.*;
+
+/**
+ * https://leetcode.com/problems/find-peak-element/description/?envType=study-plan-v2&envId=leetcode-75
+ *
+ * 0-인덱스 정수 배열이 주어지면 nums 피크 요소를 찾고 해당 인덱스를 반환합니다.
+ * 배열에 여러 피크가 포함된 경우 피크 중 하나 에 대한 인덱스를 반환합니다 .
+ *
+ * 조건 시간복잡도 O(log n).
+ *
+ * 첫 번째 예시에서 nums = [1,2,3,1]이 주어졌을 때, 3은 이웃한 숫자 2와 1보다 크기 때문에 피크 요소입니다.
+ * 3의 인덱스는 2이므로 출력은 2가 됩니다.
+ *
+ * 두 번째 예시에서 nums = [1,2,1,3,5,6,4]이 주어졌을 때, 2와 6 모두 피크 요소입니다.
+ * 2는 인덱스 1에 있고, 6은 인덱스 5에 있습니다. 따라서 인덱스 1 또는 5를 반환할 수 있습니다.
+ */
 public class Solution {
 
 	public static void main(String[] args) {
+
+//		findPeakElement(new int[]{1,2,3,1});
+		findPeakElement(new int[]{1,2,1,3,5,6,4});
 	}
 
 	public static int findPeakElement(int[] nums) {

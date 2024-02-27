@@ -50,19 +50,23 @@ public class Solution {
         // 최대 점수를 저장할 변수를 선언
         long answer = 0;
         // 선택된 num1 원소들의 합을 저장할 변수
-        long sumS = 0;
+        long num1Sum = 0;
 
         // ess 배열을 순회
         for (int[] es : ess) {
             // 현재 num1 원소를 우선순위 큐에 추가
             pq.add(es[1]);
             // num1 원소들의 합을 갱신
-            sumS = (sumS + es[1]);
+            num1Sum = (num1Sum + es[1]);
 
             // 우선순위 큐의 크기가 k보다 크면, 가장 작은 원소를 제거(합에서도 뺌).
-            if (pq.size() > k) sumS -= pq.poll();
+            if (pq.size() > k) {
+                num1Sum -= pq.poll();
+            }
             // 우선순위 큐의 크기가 k라면, 현재의 합과 num2의 최소값을 곱하여 최대 점수를 갱신
-            if (pq.size() == k) answer = Math.max(answer, (sumS * es[0]));
+            if (pq.size() == k) {
+                answer = Math.max(answer, (num1Sum * es[0]));
+            }
         }
 
         return answer;
