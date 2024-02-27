@@ -36,24 +36,25 @@ public class Solution {
 		if(nums[n-1] > nums[n-2]) return n-1;
 
 		// 나머지 배열에 대해 이진 탐색을 실행합니다.
-		int start = 1;
-		int end = n-2;
+		int left = 1;
+		int right = n-2;
 
 		// 시작 인덱스가 종료 인덱스보다 작거나 같을 때까지 반복합니다.
-		while(start <= end) {
+		while(left <= right) {
 			// 중간점을 찾습니다.
-			int mid = start + (end - start) / 2;
+			int mid = left + (right - left) / 2;
+
 			// 중간점이 피크 조건을 만족하면, 그 인덱스를 반환합니다.
 			if(nums[mid] > nums[mid-1] && nums[mid] > nums[mid+1]){
 				return mid;
 			}
 			// 중간점의 값이 왼쪽 이웃보다 작으면, 피크는 왼쪽에 있습니다.
 			else if(nums[mid] < nums[mid-1]){
-				end = mid - 1;
+				right = mid - 1;
 			}
 			// 중간점의 값이 오른쪽 이웃보다 작으면, 피크는 오른쪽에 있습니다.
 			else if(nums[mid] < nums[mid+1]){
-				start = mid + 1;
+				left = mid + 1;
 			}
 		}
 		// 이진 탐색 알고리즘은 항상 피크를 찾으므로 이 라인은 실행되지 않습니다.

@@ -1,4 +1,4 @@
-package garam.week2.tuesday.문제4_contructBinaryTreeFromPreorderAndInorderTraversal;
+package garam.week2.tuesday_트리.문제4_contructBinaryTreeFromPreorderAndInorderTraversal;
 
 public class Solution {
 	public static void main(String[] args) {

@@ -16,21 +16,21 @@ public class Solution {
 
 	public static int guessNumber(int n) {
 		// 탐색 범위의 시작점
-		int low = 1;
+		int left = 1;
 		// 탐색 범위의 끝점
-		int high = n;
+		int right = n;
 
 		// 이진 탐색 시작: low가 high보다 작거나 같을 때까지 반복
-		while(low <= high){
+		while(left <= right){
 			// low와 high의 중간 값(오버플로우 방지)
-			int mid = low + (high - low) / 2;
+			int mid = left + (right - left) / 2;
 			// guess 함수 호출로 mid와 사용자가 생각하는 숫자 비교
 			int pick = guess(mid);
 
 			// pick > 0: 추측한 숫자가 작음, 탐색 범위를 높은 쪽으로 조정
-			if(pick > 0) low = mid + 1;
+			if(pick > 0) left = mid + 1;
 				// pick < 0: 추측한 숫자가 큼, 탐색 범위를 낮은 쪽으로 조정
-			else if(pick < 0) high = mid - 1;
+			else if(pick < 0) right = mid - 1;
 				// pick == 0: 숫자를 맞춤, mid 반환
 			else return mid;
 
