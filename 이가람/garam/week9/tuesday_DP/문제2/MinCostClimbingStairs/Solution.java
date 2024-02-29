@@ -3,6 +3,13 @@ package garam.week9.tuesday_DP.문제2.MinCostClimbingStairs;
 
 import java.util.*;
 
+
+/***
+ * https://leetcode.com/problems/min-cost-climbing-stairs/?envType=study-plan-v2&envId=leetcode-75
+ * 개발남노씨 minCostClimbingStairs 문제 참고,
+ *
+ * 메모이제이션 방식
+ */
 public class Solution {
 
     public static void main(String[] args) {

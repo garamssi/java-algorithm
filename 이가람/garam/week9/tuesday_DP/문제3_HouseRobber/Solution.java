@@ -1,5 +1,12 @@
 package garam.week9.tuesday_DP.문제3_HouseRobber;
 
+
+/**
+ * https://leetcode.com/problems/min-cost-climbing-stairs/description/?envType=study-plan-v2&envId=leetcode-75
+ * 자바 알고리즘 인터뷰 - 집도둑 829pg 참고
+ *
+ * 타뷸레이션 방식
+ */
 public class Solution {
     public static void main(String[] args) {
 
