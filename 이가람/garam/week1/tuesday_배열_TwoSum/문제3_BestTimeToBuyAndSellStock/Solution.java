@@ -1,4 +1,4 @@
-package garam.week1.tuesday.문제3_BestTimeToBuyAndSellStock;
+package garam.week1.tuesday_배열_TwoSum.문제3_BestTimeToBuyAndSellStock;
 
 public class Solution {
 	public static void main(String[] args) {
