@@ -3,7 +3,7 @@ class Solution {
     private Map<Integer, List<String>> keypad;
 
     public List<String> letterCombinations(String digits) {
-        if (digits.equals("")) {
+        if (digits.length() == 0) {
             return new ArrayList<String>();
         }
 
