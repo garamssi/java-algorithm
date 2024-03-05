@@ -3,10 +3,12 @@ class Solution {
     private Map<Integer, List<String>> keypad;
 
     public List<String> letterCombinations(String digits) {
+        if (digits.equals("")) {
+            return new ArrayList<String>();
+        }
+
         result = new ArrayList<>();
         keypad = new HashMap<>();
-        keypad.put(0, new ArrayList<>());
-        keypad.put(1, new ArrayList<>());
         keypad.put(2, List.of("a", "b", "c"));
         keypad.put(3, List.of("d", "e", "f"));
         keypad.put(4, List.of("g", "h", "i"));
@@ -16,16 +18,14 @@ class Solution {
         keypad.put(8, List.of("t", "u", "v"));
         keypad.put(9, List.of("w", "x", "y", "z"));
 
-        int digitsLength = digits.length();
-        dfs(0, "", digits, digitsLength);
-    
+        dfs(0, "", digits, digits.length());
+
         return result;
     }
+
     public void dfs(int index, String temp, String digits, int digitsLength) {
         if (index == digitsLength) {
-            if (temp.length() > 0) {
-                result.add(temp);
-            }
+            result.add(temp);
             return;
         }
         int digit = digits.charAt(index) - '0';
