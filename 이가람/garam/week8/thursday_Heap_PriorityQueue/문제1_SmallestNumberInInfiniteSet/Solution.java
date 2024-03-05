@@ -1,6 +1,5 @@
-package garam.week8.tursday_Heap_PriorityQueue.문제1_SmallestNumberInInfiniteSet;
+package garam.week8.thursday_Heap_PriorityQueue.문제1_SmallestNumberInInfiniteSet;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Solution {

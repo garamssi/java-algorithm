@@ -1,4 +1,4 @@
-package garam.week9.tursday_DP.문제2_LongestCommonSubsequence;
+package garam.week9.thursday_DP.문제2_LongestCommonSubsequence;
 
 /**
  * https://leetcode.com/problems/longest-common-subsequence/description/?envType=study-plan-v2&envId=leetcode-75

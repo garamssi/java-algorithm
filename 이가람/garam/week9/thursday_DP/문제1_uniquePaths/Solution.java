@@ -1,4 +1,4 @@
-package garam.week9.tursday_DP.문제1_uniquePaths;
+package garam.week9.thursday_DP.문제1_uniquePaths;
 
 import java.util.Arrays;
 

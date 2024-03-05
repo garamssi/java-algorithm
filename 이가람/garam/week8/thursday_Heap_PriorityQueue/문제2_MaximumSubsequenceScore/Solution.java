@@ -1,4 +1,4 @@
-package garam.week8.tursday_Heap_PriorityQueue.문제2_MaximumSubsequenceScore;
+package garam.week8.thursday_Heap_PriorityQueue.문제2_MaximumSubsequenceScore;
 
 import java.util.*;
 

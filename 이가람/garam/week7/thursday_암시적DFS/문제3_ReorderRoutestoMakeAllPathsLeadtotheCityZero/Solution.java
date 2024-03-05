@@ -1,4 +1,4 @@
-package garam.week7.tursday_암시적DFS.문제3_ReorderRoutestoMakeAllPathsLeadtotheCityZero;
+package garam.week7.thursday_암시적DFS.문제3_ReorderRoutestoMakeAllPathsLeadtotheCityZero;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package garam.week7.tursday_암시적DFS.문제2_NumberOfProvinces;
+package garam.week7.thursday_암시적DFS.문제2_NumberOfProvinces;
 
 import java.util.ArrayList;
 import java.util.List;

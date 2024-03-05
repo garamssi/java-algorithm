@@ -1,4 +1,4 @@
-package garam.week9.tursday_DP.문제3_BestTimeToBuyAndSellStockWithTransactionFee;
+package garam.week9.thursday_DP.문제3_BestTimeToBuyAndSellStockWithTransactionFee;
 
 /**
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/?envType=study-plan-v2&envId=leetcode-75

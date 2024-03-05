@@ -1,4 +1,4 @@
-package garam.week8.tursday_Heap_PriorityQueue.문제3_TotalCostToHireKWorkers;
+package garam.week8.thursday_Heap_PriorityQueue.문제3_TotalCostToHireKWorkers;
 
 
 import java.util.*;

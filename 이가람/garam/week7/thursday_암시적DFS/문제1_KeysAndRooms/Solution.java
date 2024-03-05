@@ -1,4 +1,4 @@
-package garam.week7.tursday_암시적DFS.문제1_KeysAndRooms;
+package garam.week7.thursday_암시적DFS.문제1_KeysAndRooms;
 
 import java.util.List;
 
