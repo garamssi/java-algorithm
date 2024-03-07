@@ -13,21 +13,25 @@ import java.util.*;
 public class Solution {
 	public static void main(String[] args) {
 
-		combinationSum(3, 9);
+		List<List<Integer>> lists = combinationSum3(3, 9);
+		System.out.println();
 	}
 
-	public static List<List<Integer>> combinationSum(int k, int n) {
+	public static List<List<Integer>> combinationSum3(int k, int n) {
 		List<List<Integer>> ans = new ArrayList<>();
 		combination(ans, new ArrayList<Integer>(), k, 1, n);
 		return ans;
 	}
 
 	private static void combination(List<List<Integer>> ans, List<Integer> comb, int k,  int start, int n) {
+		// k(개수) 사이즈와 n(개수의 총합)이 맞으면 ans 에 추가.
 		if (comb.size() == k && n == 0) {
 			List<Integer> li = new ArrayList<>(comb);
 			ans.add(li);
 			return;
 		}
+
+		// i 시작 값이 start로 인해 재귀를 돌면서 start 기준으로 9까지 돈다.
 		for (int i = start; i <= 9; i++) {
 			comb.add(i);
 			combination(ans, comb, k, i+1, n-i);
