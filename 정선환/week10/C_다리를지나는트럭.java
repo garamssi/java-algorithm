@@ -1,66 +1,49 @@
 package week10;
 
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 
 public class C_다리를지나는트럭 {
     public static void main(String[] args) {
-        System.out.println(solution(2, 10, new int[]{7,4,5,6}));
+//        System.out.println(solution(2, 10, new int[]{7,4,5,6}));
+        System.out.println(solution(100, 100, new int[]{10, 10, 10, 10, 10, 10, 10, 10, 10, 10}));
     }
 
     public static int solution(int bridge_length, int weight, int[] truck_weights) {
-
         // 큐 자료구조 초기화
-        Queue<Truck> waitTruckQueue = new LinkedList<>();
+        Queue<Integer> waitTruckQueue = new LinkedList<>();
         for(int i = 0; i < truck_weights.length; i++) {
-            Truck truck = new Truck(i, truck_weights[i]);
-            waitTruckQueue.offer(truck);
+            waitTruckQueue.offer(truck_weights[i]);
         }
-        Queue<Truck> crossingTruckQueue = new LinkedList<>();
-        Queue<Truck> crossedTruckQueue = new LinkedList<>();
 
-        // 트럭 이동 중인 map
-        Map<Truck, Integer> crossingTruckMap = new HashMap<>();
+        Queue<Integer> bridgeQueue = new LinkedList<>();
+        for(int i = 0; i < bridge_length; i++) {
+            bridgeQueue.offer(0);
+        }
 
         int time = 0;
-        while(!waitTruckQueue.isEmpty() && crossedTruckQueue.size() != truck_weights.length) {
+        int currentBridgeWeight = 0;
+
+        while(!bridgeQueue.isEmpty()) {
             time++;
 
             // 다리를 건너는 트럭 -> 다리를 지난 트럭
-
+            int crossingTruck = bridgeQueue.poll();
+            currentBridgeWeight -= crossingTruck;
 
             // 대기트럭 -> 다리를 건너는 트럭
-            int crossingTruckSum = crossingTruckQueue.stream().mapToInt(Truck::getWeight).sum();
-            if(crossingTruckQueue.size() < bridge_length && crossingTruckSum < weight) {
-                Truck truck = waitTruckQueue.poll();
-                crossingTruckQueue.offer(truck);
-                crossingTruckMap.put(truck, 1);
+            if(!waitTruckQueue.isEmpty()) {
+                if(currentBridgeWeight + waitTruckQueue.peek() <= weight) {
+                    int truck = waitTruckQueue.poll();
+                    bridgeQueue.offer(truck);
+                    currentBridgeWeight += truck;
+                }else {
+                    bridgeQueue.offer(0);
+                }
             }
-
-
         }
 
-        return 0;
-    }
-
-    public static class Truck {
-        int number;
-        int weight;
-
-        public Truck(int number, int weight) {
-            this.number = number;
-            this.weight = weight;
-        }
-
-        public int getNumber() {
-            return number;
-        }
-
-        public int getWeight() {
-            return weight;
-        }
+        return time;
     }
 
 }
