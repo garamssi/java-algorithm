@@ -1,4 +1,4 @@
-package garam.week10.thursday.문제2_의상;
+package garam.week10.thursday_해쉬.문제2_의상;
 
 import java.util.HashMap;
 import java.util.Map;

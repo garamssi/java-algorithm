@@ -1,4 +1,4 @@
-package garam.week10.thursday.문제3.베스트앨범;
+package garam.week10.thursday_해쉬.문제3.베스트앨범;
 
 import java.util.*;
 

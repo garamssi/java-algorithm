@@ -1,4 +1,4 @@
-package garam.week10.thursday.문제1_전화번호목록;
+package garam.week10.thursday_해쉬.문제1_전화번호목록;
 
 import java.util.HashMap;
 import java.util.Map;
