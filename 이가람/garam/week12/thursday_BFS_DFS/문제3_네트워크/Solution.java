@@ -1,4 +1,4 @@
-package garam.week11.thursday_BFS_DFS.문제3_네트워크;
+package garam.week12.thursday_BFS_DFS.문제3_네트워크;
 
 public class Solution {
 

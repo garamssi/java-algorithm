@@ -1,4 +1,4 @@
-package garam.week11.thursday_BFS_DFS.문제1_타켓넘버;
+package garam.week12.thursday_BFS_DFS.문제1_타켓넘버;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package garam.week11.thursday_BFS_DFS.문제2_단어변환;
+package garam.week12.thursday_BFS_DFS.문제2_단어변환;
 
 import java.util.*;
 
