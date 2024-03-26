@@ -1,7 +1,7 @@
 class Solution {
     public int solution(int[][] sizes) {
         int width = 0;
-        int length = 0;
+        int height = 0;
         
         for (int[] size : sizes) {
             if (size[0] < size[1]) {
@@ -9,10 +9,10 @@ class Solution {
             }
             
             width = Math.max(size[0], width);
-            length = Math.max(size[1], length);
+            height = Math.max(size[1], height);
         }
         
-        return width * length;
+        return width * height;
     }
     
     private void rotate(int[] size) {
