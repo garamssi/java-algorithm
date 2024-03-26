@@ -1,38 +1,39 @@
 package week12;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * https://school.programmers.co.kr/learn/courses/30/lessons/42839
  * 소수 찾기
  */
 public class H_소수찾기 {
+
+    private static Set<Integer> found = new HashSet<>(); // 중복된 조합을 방지하기 위해 사용
+
     public static void main(String[] args) {
 //        String numbers = "011";  // 1 7 3 17 13 71 73 31 37 173 137 713 731 317 371
-        String numbers = "17";  // 1 17 173 13 137 7 71 713 73 731 3 31 317 37 371
-//        String numbers = "011";
+//        String numbers = "17";  // 1 17 173 13 137 7 71 713 73 731 3 31 317 37 371
+        String numbers = "011";
 
         System.out.println(solution(numbers));
     }
 
     static int count = 0;
     public static int solution(String numbers) {
-        while (numbers.startsWith("0")) {
-            numbers = numbers.substring(1);
-        }
-
         char[] numberArray = numbers.toCharArray();
         boolean[] visited = new boolean[numberArray.length];
         dfs(numberArray, new StringBuilder(), visited);
-        System.out.println("------------------");
-        return count;
+        return found.size();
     }
 
     private static void dfs(char[] numberArray, StringBuilder sb, boolean[] visited) {
         if (sb.length() > 0) {
-            System.out.println(sb);
-            if(isPrime(Integer.parseInt(sb.toString()))) {
+            int number = Integer.parseInt(sb.toString());
+            if(isPrime(number)) {
                 count++;
+                found.add(number);
             }
         }
 
