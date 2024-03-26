@@ -3,23 +3,23 @@ import java.util.Set;
 
 class Solution {
     Set<Integer> primeNumbers = new HashSet<>();
-    int count = 0;
+    int answer = 0;
     boolean[] used;
 
     public int solution(String numbers) {
         used = new boolean[numbers.length()];
 
         dfs(0, 0, numbers);
-        return count;
+        return answer;
     }
 
-    private void dfs(int idx, int madeNumber, String numbers) {
-        if (idx != 0 && !primeNumbers.contains(madeNumber) && isPrimeNumber(madeNumber)) {
+    private void dfs(int usedCount, int madeNumber, String numbers) {
+        if (usedCount != 0 && !primeNumbers.contains(madeNumber) && isPrimeNumber(madeNumber)) {
             primeNumbers.add(madeNumber);
-            count++;
+            answer++;
         }
 
-        if (idx >= numbers.length()) {
+        if (usedCount >= numbers.length()) {
             return;
         }
 
@@ -27,7 +27,7 @@ class Solution {
             if (!used[i]) {
                 used[i] = true;
                 int num = madeNumber * 10 + numbers.charAt(i) - '0';
-                dfs(idx + 1, num, numbers);
+                dfs(usedCount + 1, num, numbers);
                 used[i] = false;
             }
         }
