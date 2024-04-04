@@ -12,12 +12,11 @@ class Solution {
         for (int i = 0; i < 9; i++) {
             countList.add(new HashSet<>());
         }
-        countList.get(1).add(N);
 
-        for (int i = 2; i < 9; i++) {
+        for (int i = 1; i < 9; i++) {
             Set<Integer> countSet = countList.get(i);
 
-            for (int j = 1; j <= i; j++) {
+            for (int j = 1; j < i; j++) {
                 Set<Integer> pre = countList.get(j);
                 Set<Integer> post = countList.get(i - j);
 
@@ -33,13 +32,12 @@ class Solution {
                 }
             }
             countSet.add(Integer.parseInt(String.valueOf(N).repeat(i)));
-        }
 
-        for (Set<Integer> countSet : countList) {
             if (countSet.contains(number)) {
-                return countList.indexOf(countSet);
+                return i;
             }
         }
+
         return -1;
     }
 }
