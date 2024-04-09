@@ -5,53 +5,49 @@ import java.util.*;
 public class 문제1_가장먼노드 {
 
     public static void main(String[] args) {
-        solution(5, new int[][]{{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}});
+        solution(6, new int[][]{{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}});
     }
 
-    public static int solution(int n, int[][] results) {
-
-        final int INF = 1000000000; // 무한대 값을 나타내는 상수
-        int[][] graph = new int[n + 1][n + 1];
-
-        // 그래프 초기화: 자기 자신으로의 경로는 0, 그 외는 INF로 설정
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (i == j) graph[i][j] = 0;
-                else graph[i][j] = INF;
-            }
+    public static int solution(int n, int[][] edge) {
+        // 각 노드가 연결된 정보를 저장할 리스트 생성
+        List<List<Integer>> graph = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            graph.add(new ArrayList<>());
         }
 
-        // 결과 입력을 통한 그래프 초기화: 승리 = 1, 패배 = -1
-        for (int[] result : results) {
-            graph[result[0]][result[1]] = 1; // 승리
-            graph[result[1]][result[0]] = -1; // 패배
+        // 주어진 edge 정보를 바탕으로 양방향 그래프 구성
+        for (int[] e : edge) {
+            graph.get(e[0]).add(e[1]);
+            graph.get(e[1]).add(e[0]);
         }
 
-        // 플로이드-워셜 알고리즘을 사용하여 각 선수간의 승패 관계 분석
-        for (int k = 1; k <= n; k++) {
-            for (int i = 1; i <= n; i++) {
-                for (int j = 1; j <= n; j++) {
-                    if (graph[i][k] == 1 && graph[k][j] == 1) {
-                        graph[i][j] = 1;
-                    } else if (graph[i][k] == -1 && graph[k][j] == -1) {
-                        graph[i][j] = -1;
-                    }
+        // 노드 방문 정보와 거리 정보를 저장할 배열 초기화
+        boolean[] visited = new boolean[n + 1];
+        int[] distance = new int[n + 1];
+        Arrays.fill(distance, -1); // 거리 정보를 -1로 초기화
+
+        // BFS 실행
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1); // 1번 노드부터 시작
+        visited[1] = true;
+        distance[1] = 0; // 1번 노드의 거리는 0
+
+        while (!queue.isEmpty()) {
+            int current = queue.poll();
+
+            for (int next : graph.get(current)) {
+                if (!visited[next]) {
+                    visited[next] = true;
+                    queue.offer(next);
+                    distance[next] = distance[current] + 1;
                 }
             }
         }
 
-        // 순위를 정확히 알 수 있는 선수의 수 계산
-        int answer = 0;
-        for (int i = 1; i <= n; i++) {
-            boolean isDeterminable = true;
-            for (int j = 1; j <= n; j++) {
-                if (i != j && graph[i][j] == INF) {
-                    isDeterminable = false;
-                    break;
-                }
-            }
-            if (isDeterminable) answer++;
-        }
+        // 최대 거리 찾기
+        int maxDistance = Arrays.stream(distance).max().getAsInt();
+        // 최대 거리를 가진 노드의 수를 카운트
+        int answer = (int) Arrays.stream(distance).filter(d -> d == maxDistance).count();
 
         return answer;
     }
