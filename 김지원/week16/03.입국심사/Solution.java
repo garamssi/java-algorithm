@@ -3,14 +3,12 @@ import java.util.Arrays;
 class Solution {
     public long solution(int n, int[] times) {
         Arrays.sort(times);
-        int max = times[times.length - 1];
-
-        return binarySearch(times, n, max);
+        return binarySearch(times, n);
     }
 
-    private long binarySearch(int[] times, int n, int max) {
+    private long binarySearch(int[] times, int n) {
         long start = 1;
-        long end = (long) n * max;
+        long end = (long) n * times[times.length - 1];
         long answer = Long.MAX_VALUE;
         long mid = 0;
 
