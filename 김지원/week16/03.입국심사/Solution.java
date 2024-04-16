@@ -18,7 +18,7 @@ class Solution {
             mid = (start + end) / 2;
 
             if (isPassed(times, n, mid)) {
-                answer = Math.min(answer, mid);
+                answer = mid;
                 end = mid - 1;
             } else {
                 start = mid + 1;
