@@ -6,12 +6,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 /*
-5
-51 185
-55 185
-88 186
-60 175
-46 155
+* 문제의 조건을 잘 살피자
+
+입력값이 낮으므로 정렬 함수를 사용하지 않아도 정답을 구할 수있다.
+- 2 ≤ N ≤ 50
+- 10 ≤ x, y ≤ 200
  */
 public class Main {
 

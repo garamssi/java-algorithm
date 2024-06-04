@@ -27,10 +27,10 @@ public class Main {
     }
 
     public void solution(List<Person> personList) {
-        for (int i = 0; i < personList.size(); i++) {
+        for (Person person : personList) {
             int rank = 1;
-            for (int j = 0; j < personList.size(); j++) {
-                if (personList.get(j).graterThan(personList.get(i))) {
+            for (Person other : personList) {
+                if (other.graterThan(person)) {
                     rank++;
                 }
             }
