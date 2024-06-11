@@ -46,11 +46,10 @@ public class Main {
     }
 
     private int findRightLegLength(int n, char[][] map, int[] heart, int waistLength) {
-        int startX;
-        int startY;
         int rightLegLength = 0;
-        startX = heart[0] + waistLength + 1;
-        startY = heart[1] + 1;
+        int startX = heart[0] + waistLength + 1;
+        int startY = heart[1] + 1;
+
         while (startX < n && map[startX][startY] == '*') {
             rightLegLength++;
             startX++;
@@ -59,11 +58,10 @@ public class Main {
     }
 
     private int findLeftLegLength(int n, char[][] map, int[] heart, int waistLength) {
-        int startY;
-        int startX;
         int leftLegLength = 0;
-        startX = heart[0] + waistLength + 1;
-        startY = heart[1] - 1;
+        int startX = heart[0] + waistLength + 1;
+        int startY = heart[1] - 1;
+
         while (startX < n && map[startX][startY] == '*') {
             leftLegLength++;
             startX++;
@@ -72,11 +70,10 @@ public class Main {
     }
 
     private int findWaistLength(int n, char[][] map, int[] heart) {
-        int startY;
-        int startX;
         int waistLength = 0;
-        startX = heart[0] + 1;
-        startY = heart[1];
+        int startX = heart[0] + 1;
+        int startY = heart[1];
+
         while (startX < n && map[startX][startY] == '*') {
             waistLength++;
             startX++;
@@ -85,11 +82,10 @@ public class Main {
     }
 
     private int findRightArmLength(int n, char[][] map, int[] heart) {
-        int startX;
-        int startY;
         int rightArmLength = 0;
-        startX = heart[0];
-        startY = heart[1] + 1;
+        int startX = heart[0];
+        int startY = heart[1] + 1;
+
         while (startY < n && map[startX][startY] == '*') {
             rightArmLength++;
             startY++;
@@ -98,11 +94,10 @@ public class Main {
     }
 
     private int findLeftLength(char[][] map, int[] heart) {
-        int startY;
-        int startX;
         int leftArmLength = 0;
-        startX = heart[0];
-        startY = heart[1] - 1;
+        int startX = heart[0];
+        int startY = heart[1] - 1;
+
         while (startY >= 0 && map[startX][startY] == '*') {
             leftArmLength++;
             startY--;
