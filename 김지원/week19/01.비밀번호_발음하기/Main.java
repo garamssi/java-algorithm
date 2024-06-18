@@ -65,7 +65,7 @@ public class Main {
         int seqCnt = 0;
 
         for (char letter : password.toCharArray()) {
-            if ((isVowel(pre) && isVowel(letter)) || (!isVowel(pre) && !isVowel(letter))) {
+            if ((isVowel(pre) && isVowel(letter)) || (isConsonant(pre) && isConsonant(letter))) {
                 seqCnt++;
                 if (seqCnt == 3) {
                     return false;
@@ -92,5 +92,9 @@ public class Main {
 
     private boolean isVowel(char letter) {
         return letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u';
+    }
+
+    private boolean isConsonant(char pre) {
+        return !isVowel(pre);
     }
 }
