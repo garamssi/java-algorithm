@@ -67,11 +67,11 @@ public class Main {
         for (char letter : password.toCharArray()) {
             if ((isVowel(pre) && isVowel(letter)) || (isConsonant(pre) && isConsonant(letter))) {
                 seqCnt++;
-                if (seqCnt == 3) {
-                    return false;
-                }
             } else {
                 seqCnt = 1;
+            }
+            if (seqCnt == 3) {
+                return false;
             }
             pre = letter;
         }
