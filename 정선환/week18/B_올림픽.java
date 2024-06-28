@@ -51,19 +51,20 @@ public class B_올림픽 {
         }
 
         // 정답 추출
-        for(int i = 0; i < medalList.size(); i++) {
-            if(medalList.get(i)[0] == targetNation) {
-                int[] target = medalList.get(i);
-                int[] before = medalList.get(i - 1);
+        int rank = 1;
+        for(int i = 1; i < medalList.size(); i++) {
+            int[] target = medalList.get(i);
+            int[] before = medalList.get(i - 1);
 
-                if(target[1] == before[1] && target[2] == before[2] && target[3] == before[3]) {
-                    System.out.println(i);
-                    return;
-                }else {
-                    System.out.println(i + 1);
-                    return;
-                }
+            if(!(target[1] == before[1] && target[2] == before[2] && target[3] == before[3])) {
+                rank = i + 1;
+            }
+
+            if(medalList.get(i)[0] == targetNation) {
+                System.out.println(rank);
+                return;
             }
         }
+        System.out.println(rank);
     }
 }
