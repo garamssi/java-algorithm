@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 public class B_스위치켜고끄기 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+
         int switchCount = Integer.parseInt(bf.readLine());
         String[] switchStatus = bf.readLine().split(" ");
         int studentCount = Integer.parseInt(bf.readLine());
@@ -29,6 +30,8 @@ public class B_스위치켜고끄기 {
                 }
 
             }else { // 여자
+                switchStatus[switchNumber - 1] = switchStatusChange(switchStatus[switchNumber - 1]);
+
                 int left = switchNumber - 1 - 1;
                 int right = switchNumber + 1 - 1;
 
@@ -47,7 +50,12 @@ public class B_스위치켜고끄기 {
             }
         }
 
-        System.out.println(String.join(" ", switchStatus));
+        for (int i = 0; i < switchStatus.length; i++) {
+            if(i % 20 == 0 && i != 0) {
+                System.out.println();
+            }
+            System.out.print(switchStatus[i] + " ");
+        }
     }
 
     // 스위치 상태 변경
