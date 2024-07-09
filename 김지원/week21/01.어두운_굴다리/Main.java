@@ -2,7 +2,12 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main {
-
+    /*
+    입력값
+    5
+    2
+    2 4
+    */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -31,6 +36,17 @@ public class Main {
         int mid = 0;
         int answer = 0;
 
+
+        // while 문
+        // min = 0, max = 5
+        // mid = 2
+
+        // min = 0, max = 1
+        // mid = 0
+
+        // min = 1, max = 1
+        // mid = 1
+        
         while (min <= max) {
             mid = (min + max) / 2;
             if (isBright(bridgeLen, mid, numLight, lightPos)) {
@@ -47,7 +63,7 @@ public class Main {
     }
 
     private boolean isBright(int bridgeLen, int lightLen, int numLight, int[] lightPos) {
-        int currentEnd = 0;
+        int currentEnd = 0;  // 각 가로등이 빛이 어느정도 비춰졌냐... 
 
         for (int i = 0; i < numLight; i++) {
             if (lightPos[i] - lightLen > currentEnd) {
