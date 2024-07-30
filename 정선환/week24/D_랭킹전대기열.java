@@ -31,8 +31,12 @@ public class D_랭킹전대기열 {
         }
 
         for (Room room : rooms) {
-            bw.write(room.getStatus() + "\n");
             PriorityQueue<Player> players = room.players;
+            if(players.size() < m) {
+                bw.write("Waiting!\n");
+            }else {
+                bw.write("Started!\n");
+            }
 
             while(!players.isEmpty()) {
                 Player poll = players.poll();
@@ -83,11 +87,6 @@ public class D_랭킹전대기열 {
             PriorityQueue<Player> joinedPlayers = room.getPlayers();
             joinedPlayers.offer(player);
 
-            // 방 업데이트
-            if(joinedPlayers.size() == m) {
-                room.startRoom();
-            }
-
             isJoin = true;
             break;
         }
@@ -101,13 +100,11 @@ public class D_랭킹전대기열 {
         private int minLevel;
         private int maxLevel;
         private PriorityQueue<Player> players;
-        private String status;
 
         public Room(int minLevel, int maxLevel, PriorityQueue<Player> players) {
             this.minLevel = minLevel;
             this.maxLevel = maxLevel;
             this.players = players;
-            this.status = "Waiting!";
         }
 
         public int getMinLevel() {
@@ -122,16 +119,9 @@ public class D_랭킹전대기열 {
             return players;
         }
 
-        public String getStatus() {
-            return status;
-        }
 
         public void updatePlayers(PriorityQueue<Player> players) {
             this.players = players;
-        }
-
-        public void startRoom() {
-            this.status = "Started!";
         }
 
     }
