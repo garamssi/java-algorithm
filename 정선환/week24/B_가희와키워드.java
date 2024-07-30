@@ -28,11 +28,10 @@ public class B_가희와키워드 {
 
             while(useKeyword.hasMoreTokens()) {
                 String keyword = useKeyword.nextToken();
-                keywordMap.put(keyword, keywordMap.getOrDefault(keywordMap, 0) + 1);
+                keywordMap.remove(keyword);
             }
 
-            int count = (int) keywordMap.values().stream().filter(value -> value == 0).count();
-            bw.write(count + "\n");
+            bw.write(keywordMap.size() + "\n");
         }
 
         bf.close();
