@@ -1,6 +1,4 @@
 import java.io.*;
-import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -8,37 +6,38 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int t = Integer.parseInt(br.readLine());
 
-        int n = Integer.parseInt(br.readLine());
-        int result = new Main().solution(n, br);
-        bw.write(String.valueOf(result));
+        StringBuilder sb = new StringBuilder();
+
+        while (t-- > 0) {
+            int n = Integer.parseInt(br.readLine());
+            int[] price = new int[n];
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            for (int i = 0; i < n; i++) {
+                price[i] = Integer.parseInt(st.nextToken());
+            }
+            long maxProfit = new Main().solution(price);
+            sb.append(maxProfit).append("\n");
+        }
+
+        bw.write(sb.toString());
         br.close();
         bw.flush();
         bw.close();
     }
 
-    private int solution(int n, BufferedReader br) throws IOException {
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+    private long solution(int[] price) {
+        long maxProfit = 0;
+        int maxPrice = 0;
 
-        Queue<Integer> pq = new PriorityQueue<>();
-        for (int j = 0; j < n; j++) {
-            pq.add(Integer.parseInt(st.nextToken()));
-        }
-
-        for (int i = 0; i < n - 1; i++) {
-            st = new StringTokenizer(br.readLine(), " ");
-            for (int j = 0; j < n; j++) {
-                int num = Integer.parseInt(st.nextToken());
-                if (!pq.isEmpty() && pq.peek() < num) {
-                    pq.poll();
-                    pq.offer(num);
-                }
+        for (int i = price.length - 1; i >= 0; i--) {
+            if (maxPrice < price[i]) {
+                maxPrice = price[i];
+            } else {
+                maxProfit += maxPrice - price[i];
             }
         }
-
-        if (!pq.isEmpty()) {
-            return pq.poll();
-        }
-        return 0;
+        return maxProfit;
     }
 }
