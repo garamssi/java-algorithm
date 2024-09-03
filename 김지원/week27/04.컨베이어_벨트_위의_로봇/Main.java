@@ -57,7 +57,7 @@ public class Main {
         public void doStep() {
             rotate();
             move();
-            enterRobot();
+            upRobot();
         }
 
         public boolean checkExit() {
@@ -73,10 +73,7 @@ public class Main {
         private void rotate() {
             start = prePoint(start);
             end = prePoint(end);
-
-            if (robot[end]) {
-                robot[end] = false;
-            }
+            downRobot();
         }
 
         private void move() {
@@ -88,19 +85,14 @@ public class Main {
                     robot[from] = false;
                     robot[to] = true;
                     durability[to]--;
-
-                    // end 에 로봇이 있으면 내린다.
-                    if (robot[end]) {
-                        robot[end] = false;
-                    }
+                    downRobot();
                 }
-
                 to = prePoint(to);
                 from = prePoint(from);
             }
         }
 
-        private void enterRobot() {
+        private void upRobot() {
             if (durability[start] == 0) {
                 return;
             }
@@ -111,6 +103,12 @@ public class Main {
 
             robot[start] = true;
             durability[start]--;
+        }
+
+        private void downRobot() {
+            if (robot[end]) {
+                robot[end] = false;
+            }
         }
 
         private int prePoint(int point) {
