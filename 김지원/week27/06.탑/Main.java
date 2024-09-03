@@ -10,13 +10,13 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int n = Integer.parseInt(br.readLine());
-        int[] tops = new int[n];
+        int[] towers = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < n; i++) {
-            tops[i] = Integer.parseInt(st.nextToken());
+            towers[i] = Integer.parseInt(st.nextToken());
         }
 
-        int[] result = new Main().solution(n, tops);
+        int[] result = new Main().solution(n, towers);
 
         StringBuilder sb = new StringBuilder();
         for (int i : result) {
