@@ -29,13 +29,13 @@ public class Main {
         bw.close();
     }
 
-    public int[] solution(int n, int[] tops) {
+    public int[] solution(int n, int[] towers) {
         Stack<Integer> stack = new Stack<>();
         int[] result = new int[n];
         Arrays.fill(result, 0);
 
         for (int i = 0; i < n; i++) {
-            while (!stack.isEmpty() && tops[i] >= tops[stack.peek()]) {
+            while (!stack.isEmpty() && towers[i] >= towers[stack.peek()]) {
                 stack.pop();
             }
 
