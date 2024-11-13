@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -8,53 +7,53 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(br.readLine());
+        int[] buildings = new int[n];
 
-        int[] house = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < n; i++) {
-            house[i] = Integer.parseInt(br.readLine());
+            buildings[i] = Integer.parseInt(st.nextToken());
         }
 
-        int result = new Main().solution(house, n, m);
+        int result = new Main().solution(n, buildings);
+
         bw.write(String.valueOf(result));
         br.close();
         bw.flush();
         bw.close();
     }
 
-    private int solution(int[] house, int n, int wifiCnt) {
-        Arrays.sort(house);
+    private int solution(int n, int[] buildingHeights) {
+        int maxCount = 0;
 
-        int left = 0;
-        int right = house[n - 1];
-
-        int maxDistance = 0;
-
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            if (getInstallableWiFiCnt(house, mid) >= wifiCnt) {
-                maxDistance = Math.max(mid, maxDistance);
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
+        for (int i = 0; i < n; i++) {
+            maxCount = Math.max(calculate(i, n, buildingHeights), maxCount);
         }
-        return maxDistance;
+
+        return maxCount;
     }
 
-    private int getInstallableWiFiCnt(int[] house, int distance) {
-        int pre = 0;
-        int cnt = 1;
-
-        for (int i = 1; i < house.length; i++) {
-            if (house[i] - house[pre] >= distance) {
-                cnt++;
-                pre = i;
+    private int calculate(int cur, int n, int[] buildings) {
+        // right
+        double maxSlope = 0;
+        int visible = 0;
+        for (int i = cur + 1; i < n; i++) {
+            double slope = (buildings[i] - buildings[cur]) / (double) (i - cur);
+            if (i == cur + 1 || slope > maxSlope) {
+                visible++;
+                maxSlope = slope;
             }
         }
 
-        return cnt;
+        // left
+        for (int i = cur - 1; i >= 0; i--) {
+            double slope = (buildings[i] - buildings[cur]) / (double) (cur - i);
+            if (i == cur - 1 || slope > maxSlope) {
+                visible++;
+                maxSlope = slope;
+            }
+        }
+
+        return visible;
     }
 }
